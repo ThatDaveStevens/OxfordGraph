@@ -1,0 +1,299 @@
+CustomerNumber|Address1|Address2|Address3|Address4|PostCodeOut|PostCodeIn|PostCode|CountryCode|ExtractDate
+1000000001|56 South Street|Romford|Essex||SA11|1EB|SA11 1EB|GB|2020-01-01
+1000000002|138 High Street|Uxbridge|Middlesex||NP20|1RL|NP20 1RL|GB|2020-01-01
+1000000003|798 High Road|Finchley|London||CM21|9AX|CM21 9AX|GB|2020-01-01
+1000000004|470 High Road|Wembley|Middlesex||BT43|6AF|BT43 6AF|GB|2020-01-01
+1000000005|90 Town Square|Basildon|Essex||LS1 |6HW|LS1 6HW |GB|2020-01-01
+1000000006|106-108 High Road|Loughton|Essex||NR32|1EP|NR32 1EP|GB|2020-01-01
+1000000007|7 Alderman'sHill|Palmers Green|London||RH16|4YY|RH16 4YY|GB|2020-01-01
+1000000008|62 High Road|Ilford|Essex||IP11|7DL|IP11 7DL|GB|2020-01-01
+1000000009|190 Fore Street|Edmonton|London||CM20|1LB|CM20 1LB|GB|2020-01-01
+1000000010|51 The Broadway|West Ealing|London||DT4 |8PX|DT4 8PX |GB|2020-01-01
+1000000011|9/10 The Promenade|Edgware|Middlesex||NN1 |2EG|NN1 2EG |GB|2020-01-01
+1000000012|101-107 Finsbury Court|London|London||NG10|1JS|NG10 1JS|GB|2020-01-01
+1000000013|9 New Broadway|Ealing|London||N1  |0PN|N1 0PN  |GB|2020-01-01
+1000000014|124/126 The Grove|Stratford|London||TQ4 |5BW|TQ4 5BW |GB|2020-01-01
+1000000015|9/10 Trinity Parade|Hounslow|Middlesex||B2  |5QR|B2 5QR  |GB|2020-01-01
+1000000016|33 Church Street|Enfield|Middlesex||W5  |5AW|W5 5AW  |GB|2020-01-01
+1000000017|5 Golders Green Road|Golders Green|London||GU34|1BS|GU34 1BS|GB|2020-01-01
+1000000018|222/224 High Street North|East Ham|London||IP14|1DP|IP14 1DP|GB|2020-01-01
+1000000019|125 Camden High Street|Camden Town|London||RH4 |1UR|RH4 1UR |GB|2020-01-01
+1000000020|325 Station Road|Harrow|Middlesex||PA15|1UT|PA15 1UT|GB|2020-01-01
+1000000021|133 High Holborn|High Holborn|London||RM12|6NJ|RM12 6NJ|GB|2020-01-01
+1000000022|14 London Road|Southend-On-Sea|Essex||EH2 |4AN|EH2 4AN |GB|2020-01-01
+1000000023|56/57 High Street|Chelmsford|Essex||CH5 |1BY|CH5 1BY |GB|2020-01-01
+1000000024|189 Kensington High Street|Kensington|London||BH22|0LA|BH22 0LA|GB|2020-01-01
+1000000025|289 High Holborn|Chancery Lane|London||SN8 |1LZ|SN8 1LZ |GB|2020-01-01
+1000000026|48A High Road|Kilburn|London||MK11|1AA|MK11 1AA|GB|2020-01-01
+1000000027|5 Station Road|Hayes|Middlesex||WS15|2DT|WS15 2DT|GB|2020-01-01
+1000000028|108 High Street|Barkingside|Essex||NR30|1LS|NR30 1LS|GB|2020-01-01
+1000000029|107 High Street|Ruislip|Middlesex||CF31|1ET|CF31 1ET|GB|2020-01-01
+1000000030|156 The Centre|Feltham|Middlesex||PE30|1JY|PE30 1JY|GB|2020-01-01
+1000000031|203 Muswell Hill Broadway|Muswell Hill|London||CT14|6HE|CT14 6HE|GB|2020-01-01
+1000000032|87 High Street|Barnet|Hertfordshire||G82 |1PS|G82 1PS |GB|2020-01-01
+1000000033|62/63 Cheapside|Cheapside|London||BD21|3QG|BD21 3QG|GB|2020-01-01
+1000000034|179/181 High Street|Walthamstow|London||DE56|1PS|DE56 1PS|GB|2020-01-01
+1000000035|25 High Road|Wood Green|London||CO12|3PA|CO12 3PA|GB|2020-01-01
+1000000036|4 Station Parade|Barking|Essex||BT28|1EL|BT28 1EL|GB|2020-01-01
+1000000037|38 The Broadway|Crouch End|London||NN3 |8JZ|NN3 8JZ |GB|2020-01-01
+1000000038|266 Chingford Mount Road|Chingford|London||SG5 |1DL|SG5 1DL |GB|2020-01-01
+1000000039|329 Green Street|Upton Park|London||NG20|8AA|NG20 8AA|GB|2020-01-01
+1000000040|21 The Broadway|Greenford|Middlesex||HA2 |8HF|HA2 8HF |GB|2020-01-01
+1000000041|95 King Street|Hammersmith|London||TN24|8SF|TN24 8SF|GB|2020-01-01
+1000000042|230 High Street|Beckenham|Kent||IG1 |1DL|IG1 1DL |GB|2020-01-01
+1000000043|152/154 Broadway|Bexleyheath|Kent||EC2A|1RS|EC2A 1RS|GB|2020-01-01
+1000000044|42/44 High Street|Putney|London||YO7 |1LB|YO7 1LB |GB|2020-01-01
+1000000045|256/258 High Street|Chatham|Kent||SW4 |7UA|SW4 7UA |GB|2020-01-01
+1000000046|55 Eden Street|Kingston Upon Thames|Surrey||SW9 |7DJ|SW9 7DJ |GB|2020-01-01
+1000000047|104 High Street|Margate|Kent||N7  |6AW|N7 6AW  |GB|2020-01-01
+1000000048|32/34 Wimbledon Hill Road|Wimbledon|London||HA1 |2AA|HA1 2AA |GB|2020-01-01
+1000000049|11A George Street|Croydon|Surrey||NN1 |2HG|NN1 2HG |GB|2020-01-01
+1000000050|63 High Street|Sutton|Surrey||BB11|1PH|BB11 1PH|GB|2020-01-01
+1000000051|32 Heath Road|Twickenham|Middlesex||LE11|5BY|LE11 5BY|GB|2020-01-01
+1000000052|79 St.John's Road|Clapham Junction|London||TQ1 |3DN|TQ1 3DN |GB|2020-01-01
+1000000053|117 High Street|Epsom|Surrey||ST5 |1PZ|ST5 1PZ |GB|2020-01-01
+1000000054|18/20 High Street|Tooting|London||PE13|1DQ|PE13 1DQ|GB|2020-01-01
+1000000055|146 High Road|Streatham|London||G1  |2NB|G1 2NB  |GB|2020-01-01
+1000000056|498-504 Fulham Road|Fulham|London||TW9 |1DY|TW9 1DY |GB|2020-01-01
+1000000057|114 High Street|New Malden|Surrey||UB1 |1SU|UB1 1SU |GB|2020-01-01
+1000000058|405 Brixton Road|Brixton|London||IV30|1BJ|IV30 1BJ|GB|2020-01-01
+1000000059|156 High Street|Eltham|London||SL6 |8AB|SL6 8AB |GB|2020-01-01
+1000000060|77 High Street|Bromley|Kent||CT5 |1AZ|CT5 1AZ |GB|2020-01-01
+1000000061|198 High Street|Orpington|Kent||IV2 |3NA|IV2 3NA |GB|2020-01-01
+1000000062|26 London Road|Morden|Surrey||RM9 |5BT|RM9 5BT |GB|2020-01-01
+1000000063|28 King Street|Maidstone|Kent||PE15|8TG|PE15 8TG|GB|2020-01-01
+1000000064|152 Clapham High Street|Clapham Common|London||TN16|1AW|TN16 1AW|GB|2020-01-01
+1000000065|77 Sandgate Road|Folkestone|Kent||OL1 |3BE|OL1 3BE |GB|2020-01-01
+1000000066|52/54 High Street|Ramsgate|Kent||BT74|7DD|BT74 7DD|GB|2020-01-01
+1000000067|75 High Street|Ashford|Kent||LL29|7AB|LL29 7AB|GB|2020-01-01
+1000000068|129 Balham High Road|Balham|London||ME7 |1BX|ME7 1BX |GB|2020-01-01
+1000000069|55 High Street|Tonbridge|Kent||NE1 |8AQ|NE1 8AQ |GB|2020-01-01
+1000000070|67 Biggin Street|Dover|Kent||BN11|3AX|BN11 3AX|GB|2020-01-01
+1000000071|48 High Street|West Wickham|Kent||TR7 |1DN|TR7 1DN |GB|2020-01-01
+1000000072|4-5 High Street|Canterbury|Kent||NE3 |1HA|NE3 1HA |GB|2020-01-01
+1000000073|129 Central Road|Worcester Park|Surrey||FK8 |2LF|FK8 2LF |GB|2020-01-01
+1000000074|32 High Street|Rayleigh|Essex||L39 |2EG|L39 2EG |GB|2020-01-01
+1000000075|291 Heathway|Dagenham|Essex||BT62|1HZ|BT62 1HZ|GB|2020-01-01
+1000000076|2 South Road|Southall|Middlesex||ML3 |7AH|ML3 7AH |GB|2020-01-01
+1000000077|304/306 Chiswick High Road|Chiswick|London||TF1 |1SW|TF1 1SW |GB|2020-01-01
+1000000078|91 High Street|Sittingbourne|Kent||EC2V|6BP|EC2V 6BP|GB|2020-01-01
+1000000079|2 High Street|Bedworth|Warwickshire||TN22|1AP|TN22 1AP|GB|2020-01-01
+1000000080|1 Statio nRoad|Reading|Berkshire||YO1 |8SG|YO1 8SG |GB|2020-01-01
+1000000081|68 High Street|Newport Pagnell|Bucks||DH3 |3DF|DH3 3DF |GB|2020-01-01
+1000000082|26 Dyer Street|Cirencester|Glos||PO9 |1PQ|PO9 1PQ |GB|2020-01-01
+1000000083|29 The Nook|Anstey|Leicestershire||TN31|7JN|TN31 7JN|GB|2020-01-01
+1000000084|3 St Thomas Square|Ryde|Isle Of Wight||CV9 |1AU|CV9 1AU |GB|2020-01-01
+1000000085|24 High Street|Daventry|Northamptonshire||BS37|4AP|BS37 4AP|GB|2020-01-01
+1000000086|58 High Street|Hurstpierpoint|Sussex||BS15|8JT|BS15 8JT|GB|2020-01-01
+1000000087|9 East Street|Taunton|Somerset||IG6 |2DR|IG6 2DR |GB|2020-01-01
+1000000088|Unit 4|Pydar Street|Truro||EX8 |1EY|EX8 1EY |GB|2020-01-01
+1000000089|21 Old Bond Street|Bath|Avon||CB7 |4NT|CB7 4NT |GB|2020-01-01
+1000000090|47 Stepney Street|Llanelli|Dyfed||M28 |3BU|M28 3BU |GB|2020-01-01
+1000000091|21 Adare Street|Bridgend|S Glamorgan||TA6 |3NJ|TA6 3NJ |GB|2020-01-01
+1000000092|21 Windsor Road|Penarth|S Glamorgan||G74 |1LB|G74 1LB |GB|2020-01-01
+1000000093|6 Victoria Place|Haverfordwest|Pembrokeshire||WV10|8PW|WV10 8PW|GB|2020-01-01
+1000000094|2 Binford Place|Bridgwater|Somerset||DE14|1AN|DE14 1AN|GB|2020-01-01
+1000000095|3 Hyde Road|Paignton|Devon||CM16|4AR|CM16 4AR|GB|2020-01-01
+1000000096|Unit SU50C Cabot Circus|Bristol|Avon||WD3 |1AN|WD3 1AN |GB|2020-01-01
+1000000097|136 Holton Road|Barry|S Glamorgan||WF8 |1AG|WF8 1AG |GB|2020-01-01
+1000000098|3 High Street|Pontypridd|Mid Glamorgan||L2  |9UW|L2 9UW  |GB|2020-01-01
+1000000099|22 Fore Street|Redruth|Cornwall||PO5 |3LS|PO5 3LS |GB|2020-01-01
+1000000100|10 Rolle Street|Exmouth|Devon||HP11|2BL|HP11 2BL|GB|2020-01-01
+1000000101|3 Victoria Street|Merthyr Tydfil|Mid Glamorgan||WR14|4QZ|WR14 4QZ|GB|2020-01-01
+1000000102|2 Queen Street|Neath|W Glamorgan||RH1 |1QW|RH1 1QW |GB|2020-01-01
+1000000103|21 High Street|Abergavenny|Gwent||WR11|4DB|WR11 4DB|GB|2020-01-01
+1000000104|36 Middle Street|Yeovil|Somerset||CT7 |9AB|CT7 9AB |GB|2020-01-01
+1000000105|16 King Street|Stroud|Glos||CW5 |5AH|CW5 5AH |GB|2020-01-01
+1000000106|225-227 High Street|Cheltenham|Glos||W12 |8AT|W12 8AT |GB|2020-01-01
+1000000107|78-80 Victoria Road|Ferndown|Dorset||SW19|7PA|SW19 7PA|GB|2020-01-01
+1000000108|559 Christchurch Road|Boscombe Central|Dorset||YO42|2AL|YO42 2AL|GB|2020-01-01
+1000000109|283 Ashley Rd|Parkstone|Dorset||E13 |9AB|E13 9AB |GB|2020-01-01
+1000000110|67 High Street|Lymington|Hampshire||NW11|8EU|NW11 8EU|GB|2020-01-01
+1000000111|17 Market Street|Penzance|Cornwall||KY7 |5NR|KY7 5NR |GB|2020-01-01
+1000000112|2 Bedford Street|Exeter|Devon||RG45|7AD|RG45 7AD|GB|2020-01-01
+1000000113|11 Bampton Street|Tiverton|Devon||TS18|1SA|TS18 1SA|GB|2020-01-01
+1000000114|27 Regent Street|Bristol|Avon||GU6 |8SD|GU6 8SD |GB|2020-01-01
+1000000115|33 Fore Street|Chard|Somerset||CM14|4AB|CM14 4AB|GB|2020-01-01
+1000000116|83 High Street|Burnham-On-Sea|Somerset||DA14|6DW|DA14 6DW|GB|2020-01-01
+1000000117|197 High Street|Berkhamsted|Hertfordshire||DY3 |1SA|DY3 1SA |GB|2020-01-01
+1000000118|4A High Street|Weston-Super-Mare|Avon||SE9 |1BT|SE9 1BT |GB|2020-01-01
+1000000119|47/48 Regent Street|Swindon|Wiltshire||WD17|1NN|WD17 1NN|GB|2020-01-01
+1000000120|130 High Street|Marlborough|Wiltshire||OX26|6AG|OX26 6AG|GB|2020-01-01
+1000000121|4-5 Sponne Hse Shopping Cntr|Towcester|Northamptonshire||PO12|1DR|PO12 1DR|GB|2020-01-01
+1000000122|2 Bridge Street|Helmsley|N Yorks||SL1 |7JZ|SL1 7JZ |GB|2020-01-01
+1000000123|141-143 Armada Way|Plymouth|Devon||CV11|4AF|CV11 4AF|GB|2020-01-01
+1000000124|27 East Street|Newquay|Cornwall||PO33|2PH|PO33 2PH|GB|2020-01-01
+1000000125|3/4 CastleS treet|Trowbridge|Wiltshire||BH21|1JA|BH21 1JA|GB|2020-01-01
+1000000126|47/49 Queen Street|Cardiff|S Glamorgan||RH15|9AZ|RH15 9AZ|GB|2020-01-01
+1000000127|2 High Street|Fordingbridge|Hampshire||LE13|0TR|LE13 0TR|GB|2020-01-01
+1000000128|13 Market Square|Witney|Oxfordshire||CF37|1SB|CF37 1SB|GB|2020-01-01
+1000000129|18 Greevegate|Hunstanton|Norfolk||BH1 |4BQ|BH1 4BQ |GB|2020-01-01
+1000000130|31 Market Street|Heanor|Derbyshire||RH19|1SR|RH19 1SR|GB|2020-01-01
+1000000131|8 The Drapery|Northampton|Northamptonshire||KY8 |4EZ|KY8 4EZ |GB|2020-01-01
+1000000132|42/44 High Street|Kettering|Northamptonshire||LA14|1QX|LA14 1QX|GB|2020-01-01
+1000000133|415 The Strand|The Strand|London||PO2 |0LN|PO2 0LN |GB|2020-01-01
+1000000134|44 High Street|Bognor Regis|W Sussex||ML1 |1DE|ML1 1DE |GB|2020-01-01
+1000000135|7 Pearl Assurance House|Newton Abbot|Devon||BN3 |3YA|BN3 3YA |GB|2020-01-01
+1000000136|85 High Street|Barnstaple|Devon||LE67|3XA|LE67 3XA|GB|2020-01-01
+1000000137|91 High Street|Burnham|Berkshire||BH15|1DJ|BH15 1DJ|GB|2020-01-01
+1000000138|4 High West Street|Dorchester|Dorset||TN9 |1SD|TN9 1SD |GB|2020-01-01
+1000000139|86 High Street|Sevenoaks|Kent||SW17|0RG|SW17 0RG|GB|2020-01-01
+1000000140|75 North Road|Lancing|W Sussex||BD1 |3HN|BD1 3HN |GB|2020-01-01
+1000000141|28 Westgate Street|Gloucester|Glos||B27 |6RA|B27 6RA |GB|2020-01-01
+1000000142|77 Charles Street|Milford Haven|Dyfed||PO37|7AE|PO37 7AE|GB|2020-01-01
+1000000143|4 Church Street|Monmouth|Gwent||NG17|1DG|NG17 1DG|GB|2020-01-01
+1000000144|36 Cardiff Road|Caerphilly|Mid Glamorgan||DE6 |1HQ|DE6 1HQ |GB|2020-01-01
+1000000145|33/34 Commercial Street|Newport|Gwent||GU11|1EH|GU11 1EH|GB|2020-01-01
+1000000146|11 Guildhall Square|Carmarthen|Carmarthenshire||NG1 |2NE|NG1 2NE |GB|2020-01-01
+1000000147|26 The Mall|Cwmbran|Gwent||DY6 |9JU|DY6 9JU |GB|2020-01-01
+1000000148|258 High Street|Bangor|Gwynedd||NN10|0NZ|NN10 0NZ|GB|2020-01-01
+1000000149|79 Station Road|Port Talbot|WGlamorgan||WC1V|7HZ|WC1V 7HZ|GB|2020-01-01
+1000000150|5 Mostyn Street|Llandudno|Gwynedd||NG9 |2JG|NG9 2JG |GB|2020-01-01
+1000000151|7 George Street|Pontypool|Gwent||SL3 |8HN|SL3 8HN |GB|2020-01-01
+1000000152|30/32 Pool Street|Caernarfon|Gwynedd||B4  |7SL|B4 7SL  |GB|2020-01-01
+1000000153|29-31 High Street|Newport|Shropshire||SG6 |3EU|SG6 3EU |GB|2020-01-01
+1000000154|244 South Coast Road|Peacehaven|East Sussex||BT2 |7PL|BT2 7PL |GB|2020-01-01
+1000000155|1 George Street|Hailsham|E Sussex||BL9 |0AB|BL9 0AB |GB|2020-01-01
+1000000156|12/14 Wigmore Street|Wigmore St.|London||N17 |6QT|N17 6QT |GB|2020-01-01
+1000000157|43 Queen Square|Wolverhampton|West Midlands||CT9 |2QY|CT9 2QY |GB|2020-01-01
+1000000158|107a St James Square|Newport|Isle Of Wight||WN7 |4PG|WN7 4PG |GB|2020-01-01
+1000000159|29 Burscough Street|Ormskirk|Lancashire||EN6 |1AX|EN6 1AX |GB|2020-01-01
+1000000160|59 High Street|Uckfield|E Sussex||WD6 |1BU|WD6 1BU |GB|2020-01-01
+1000000161|21 High Street|Broadstairs|Kent||CR9 |1HP|CR9 1HP |GB|2020-01-01
+1000000162|10 Cooden Sea Road|Little Common|E Sussex||B79 |7LD|B79 7LD |GB|2020-01-01
+1000000163|132 Mortimer Street|Herne Bay|Kent||RG5 |3NW|RG5 3NW |GB|2020-01-01
+1000000164|14 Market Street|Faversham|Kent||NN5 |6JF|NN5 6JF |GB|2020-01-01
+1000000165|34 High Street|Battle|E Sussex||SK17|6BJ|SK17 6BJ|GB|2020-01-01
+1000000166|41 High Street|Tenterden|Kent||NR19|1EA|NR19 1EA|GB|2020-01-01
+1000000167|32 The Square|Birchington|Kent||BH14|9EZ|BH14 9EZ|GB|2020-01-01
+1000000168|132 Cannock Road|Scotlands|West Midlands||DT1 |1UJ|DT1 1UJ |GB|2020-01-01
+1000000169|23 Dudley Street|Sedgley|West Midlands||PO21|1SP|PO21 1SP|GB|2020-01-01
+1000000170|29 Station Road|Swanage|Dorset||ME14|1DA|ME14 1DA|GB|2020-01-01
+1000000171|80 High Street|Hythe|Kent||PA34|5SL|PA34 5SL|GB|2020-01-01
+1000000172|32 St Stephens Street|Norwich|Norfolk||DN35|8HL|DN35 8HL|GB|2020-01-01
+1000000173|25 High Street|Nantwich|||SS8 |7AS|SS8 7AS |GB|2020-01-01
+1000000174|5A Market Place|Swaffham|Norfolk||WA10|1RQ|WA10 1RQ|GB|2020-01-01
+1000000175|70 Westbury Hill|Westbury-On-Trym|Avon||NN1 |4EW|NN1 4EW |GB|2020-01-01
+1000000176|22 High Street|Great Dunmow|Essex||CT21|5AJ|CT21 5AJ|GB|2020-01-01
+1000000177|33 HighStreet|Alfreton|Derbyshire||CO10|2EA|CO10 2EA|GB|2020-01-01
+1000000178|17 North Street|Bourne|Lincolnshire||OX1 |1ET|OX1 1ET |GB|2020-01-01
+1000000179|5-7 Grove Street|Wilmslow|||WV3 |8AZ|WV3 8AZ |GB|2020-01-01
+1000000180|14 High Street|Olney|Bucks||OL16|1XN|OL16 1XN|GB|2020-01-01
+1000000181|22 Broad Street|March|Cambs||KT22|7AX|KT22 7AX|GB|2020-01-01
+1000000182|1 Angel House|Whittlesey|Cambs||DA1 |1BE|DA1 1BE |GB|2020-01-01
+1000000183|65 Regent Street|Shanklin|Isle Of Wight||BH6 |3QZ|BH6 3QZ |GB|2020-01-01
+1000000184|395 Old London Road|Ore|E Sussex||W1H |6LZ|W1H 6LZ |GB|2020-01-01
+1000000185|36 Kingsley Park Terrace|Northampton|Northamptonshire||TA20|1QR|TA20 1QR|GB|2020-01-01
+1000000186|5 Willow Parade|Langley|Berkshire||M1  |1NB|M1 1NB  |GB|2020-01-01
+1000000187|32 Station Road|Longfield|Kent||PE27|5AH|PE27 5AH|GB|2020-01-01
+1000000188|53 Knight Street|Sawbridgeworth|Hertfordshire||BH19|1AD|BH19 1AD|GB|2020-01-01
+1000000189|3 Spring Gardens Centre|Buxton|Derbyshire||PE37|7AB|PE37 7AB|GB|2020-01-01
+1000000190|1a South Street|Wareham|Dorset||TN1 |2TB|TN1 2TB |GB|2020-01-01
+1000000191|39 High Street|Wednesfield|West Midlands||BS1 |3BD|BS1 3BD |GB|2020-01-01
+1000000192|148 Statio nRoad|Ferndown|Dorset||W13 |9BP|W13 9BP |GB|2020-01-01
+1000000193|24 Bridge Street|Kirkwall|||TN12|6EN|TN12 6EN|GB|2020-01-01
+1000000194|37 Stockport Road|Marple|||B23 |6SY|B23 6SY |GB|2020-01-01
+1000000195|196 Hope Street|Glasgow|||IG11|8DP|IG11 8DP|GB|2020-01-01
+1000000196|463 Union Street|Aberdeen|||SO41|9UZ|SO41 9UZ|GB|2020-01-01
+1000000197|41-43 Chester Road West|Shotton|||DN22|6NY|DN22 6NY|GB|2020-01-01
+1000000198|26 High Street|Mold|||WC2R|0NS|WC2R 0NS|GB|2020-01-01
+1000000199|40-42 Wheelock Street|Middlewich|||RG1 |2AX|RG1 2AX |GB|2020-01-01
+1000000200|4 Allport Lane|Bromborough|||BN25|1QU|BN25 1QU|GB|2020-01-01
+1000000201|12 The Springs|Wakefield|W Yorkshire||SO14|7DT|SO14 7DT|GB|2020-01-01
+1000000202|106a Almondvale South|Livingston|West Lothian||KA1 |1PG|KA1 1PG |GB|2020-01-01
+1000000203|10 North Walk|Yate|Gloucestershire||SM1 |1HR|SM1 1HR |GB|2020-01-01
+1000000204|11 Market Place|Pontefract|West Yorkshire||PR9 |0UF|PR9 0UF |GB|2020-01-01
+1000000205|14 High Street|Redcar|Cleveland||B91 |3SH|B91 3SH |GB|2020-01-01
+1000000206|32-33 Upper Street|Islington|London||G   |G2 |G2 2UG  |GB|2020-01-01
+1000000207|29-33 Finkle Street|Kendal|Cumbria||WV1 |1TX|WV1 1TX |GB|2020-01-01
+1000000208|147/149 Telegraph Road|Heswall|||TS26|9DL|TS26 9DL|GB|2020-01-01
+1000000209|1635 Great Western Road|Glasgow|||KA12|8BQ|KA12 8BQ|GB|2020-01-01
+1000000210|151 Market Street|St Andrews|||E3  |5EH|E3 5EH  |GB|2020-01-01
+1000000211|7 Eastgate|Peebles|||LE2 |5BF|LE2 5BF |GB|2020-01-01
+1000000212|3 South Charlotte Street|Edinburgh|||TW3 |1HH|TW3 1HH |GB|2020-01-01
+1000000213|3 Church Street|Frodsham|||CW7 |1AS|CW7 1AS |GB|2020-01-01
+1000000214|81 High Street|Runcorn|||W8  |6SH|W8 6SH  |GB|2020-01-01
+1000000215|16-16a The Square|Wimborne|Dorset||SO15|3TG|SO15 3TG|GB|2020-01-01
+1000000216|20 The Quay|Bideford|Devon||CW12|1AS|CW12 1AS|GB|2020-01-01
+1000000217|448 Wimborne Road|Winton|Dorset||LA4 |5DF|LA4 5DF |GB|2020-01-01
+1000000218|2 Potacre Street|Torrington|Devon||NW7 |3LB|NW7 3LB |GB|2020-01-01
+1000000219|35-37 High Street|Alfreton|||S43 |3UX|S43 3UX |GB|2020-01-01
+1000000220|845 Osmaston Road|Allenton|||DD1 |1TF|DD1 1TF |GB|2020-01-01
+1000000221|24 Market Place|Ashbourne|||NG18|1HZ|NG18 1HZ|GB|2020-01-01
+1000000222|37 Market Street|Ashby|||HA7 |4HF|HA7 4HF |GB|2020-01-01
+1000000223|147/149 High Street|Falkirk|Stirlingshire||BT52|1DE|BT52 1DE|GB|2020-01-01
+1000000224|13-15 Leslie Street|Blairgowrie|Perthshire||EX16|6AA|EX16 6AA|GB|2020-01-01
+1000000225|63 Bridge Street|Pinner|Middlesex||B90 |3AY|B90 3AY |GB|2020-01-01
+1000000226|30 High Street|Staines|Middlesex||EN11|8EJ|EN11 8EJ|GB|2020-01-01
+1000000227|123B High Street|Waltham Cross|Hertfordshire||AB42|1ZQ|AB42 1ZQ|GB|2020-01-01
+1000000228|14 Crossgate|Cupar|Fife||KT6 |4NW|KT6 4NW |GB|2020-01-01
+1000000229|25 Euston Road|Morecambe|Lancashire||HP5 |1BX|HP5 1BX |GB|2020-01-01
+1000000230|62 Church Street|Garstang|Lancashire||N14 |5BQ|N14 5BQ |GB|2020-01-01
+1000000231|29 High Street|Biggleswade|Bedfordshire||DE1 |1SJ|DE1 1SJ |GB|2020-01-01
+1000000232|147 St Mary's Lane|Upminster|Essex||NE28|8NX|NE28 8NX|GB|2020-01-01
+1000000233|251 London Road|Mitcham|Surrey||PE1 |1LY|PE1 1LY |GB|2020-01-01
+1000000234|Unit 48 Southside|Wandsworth|London||OX14|5SB|OX14 5SB|GB|2020-01-01
+1000000235|71 Church Street|Bilston|WestMidlands||PH1 |5PZ|PH1 5PZ |GB|2020-01-01
+1000000236|5 Market Place|Blandford Forum|Dorset||DA3 |7QD|DA3 7QD |GB|2020-01-01
+1000000237|31a West Street|Bridport|Dorset||W6  |9JN|W6 9JN  |GB|2020-01-01
+1000000238|1 Threadneedle Street|London|London||PE25|3ND|PE25 3ND|GB|2020-01-01
+1000000239|169 Lower Blandford Road|Broadstone|Dorset||HA3 |7BH|HA3 7BH |GB|2020-01-01
+1000000240|30 St.Peters Avenue|Cleethorpes|NeLincolnshire||EN8 |7AD|EN8 7AD |GB|2020-01-01
+1000000241|131 High Street|Huntingdon|Cambs||BN6 |8AN|BN6 8AN |GB|2020-01-01
+1000000242|75 Market Street|Ashby-De-La-Zouch|Leicestershire||GU14|7SA|GU14 7SA|GB|2020-01-01
+1000000243|24 The Hollow|Earl Shilton|Leicestershire||SL2 |1BT|SL2 1BT |GB|2020-01-01
+1000000244|8 High Street|Market Harborough|Leicestershire||BN6 |9RG|BN6 9RG |GB|2020-01-01
+1000000245|3 Market Place|Wantage|Oxfordshire||BH24|1AN|BH24 1AN|GB|2020-01-01
+1000000246|127 Sibson Road|Birstall|Leicestershire||SS6 |7JB|SS6 7JB |GB|2020-01-01
+1000000247|21 Riverside Walk|Thetford|Norfolk||CF83|1UQ|CF83 1UQ|GB|2020-01-01
+1000000248|58 High Street|Bridgnorth|Shropshire||NN16|8SW|NN16 8SW|GB|2020-01-01
+1000000249|1 Northgate|Sleaford|Lincolnshire||LE18|1NR|LE18 1NR|GB|2020-01-01
+1000000250|3 Nelson Place|East Dereham|Norfolk||SW16|1BJ|SW16 1BJ|GB|2020-01-01
+1000000251|3 West End|Holbeach|Lincolnshire||NG17|1EL|NG17 1EL|GB|2020-01-01
+1000000252|17 Haven Road|Poole|Dorset||SP1 |2AF|SP1 2AF |GB|2020-01-01
+1000000253|18 Bridge Street|Congleton|||TS1 |1RD|TS1 1RD |GB|2020-01-01
+1000000254|14 Market Place|Fakenham|Norfolk||SP10|1LH|SP10 1LH|GB|2020-01-01
+1000000255|23 High Street|Irthlingborough|Northamptonshire||NR2 |1SX|NR2 1SX |GB|2020-01-01
+1000000256|3 Mere Street|Diss|Norfolk||BA14|8AJ|BA14 8AJ|GB|2020-01-01
+1000000257|3 Maryport Street|Devizes|Wiltshire||N8  |9SL|N8 9SL  |GB|2020-01-01
+1000000258|2 Bridge Street|Rothwell|Northamptonshire||AL1 |3NA|AL1 3NA |GB|2020-01-01
+1000000259|8 Sheep Market|St.Ives|Cambs||OX16|5PQ|OX16 5PQ|GB|2020-01-01
+1000000260|1 Wolverhampton Road|Codsall|Wolverhampton||G41 |3NN|G41 3NN |GB|2020-01-01
+1000000261|96 Newland Street|Witham|Essex||PO7 |7HE|PO7 7HE |GB|2020-01-01
+1000000262|1 New Market|Beccles|Suffolk||NN1 |2BJ|NN1 2BJ |GB|2020-01-01
+1000000263|117 Northdown Road|Cliftonville|Kent||IP1 |3DL|IP1 3DL |GB|2020-01-01
+1000000264|42 High Street|Sheringham|Norfolk||BT1 |1LX|BT1 1LX |GB|2020-01-01
+1000000265|5 Market Square|St.Neots|Cambs||PA1 |1XW|PA1 1XW |GB|2020-01-01
+1000000266|5 High Street|Stony Stratford|Bucks||TW18|4EE|TW18 4EE|GB|2020-01-01
+1000000267|66A-68 High Street|Ramsey|Cambs||SS14|1BX|SS14 1BX|GB|2020-01-01
+1000000268|39 Connaught Avenue|Frinton-On-Sea|Essex||E15 |1NU|E15 1NU |GB|2020-01-01
+1000000269|60 Blackburn Road|Accrington|||BH18|8DH|BH18 8DH|GB|2020-01-01
+1000000270|14 Market Sqare|Westerham|Kent||NR1 |3SH|NR1 3SH |GB|2020-01-01
+1000000271|55 Commercial Road|PaddockWood|Kent||EH10|4QW|EH10 4QW|GB|2020-01-01
+1000000272|9 High Street|Princes Risborough|Bucks||B97 |4EX|B97 4EX |GB|2020-01-01
+1000000273|9/11 High Street|Melton Mowbray|Leicestershire||CR8 |2LN|CR8 2LN |GB|2020-01-01
+1000000274|3 The Square|Richmond Upon Thames|Surrey||CW10|9AB|CW10 9AB|GB|2020-01-01
+1000000275|2-4 Finchfield RoadWest|Finchfield|Wolverhampton||SA13|1EX|SA13 1EX|GB|2020-01-01
+1000000276|8 Market Place|Frome|Somerset||BN7 |1TG|BN7 1TG |GB|2020-01-01
+1000000277|446 Chester Road|Little Sutton|||SN1 |1SN|SN1 1SN |GB|2020-01-01
+1000000278|60b Goring Road|Goring|WestSussex||EX31|1BL|EX31 1BL|GB|2020-01-01
+1000000279|59 Kings Street|Knutsford|||CV37|6JG|CV37 6JG|GB|2020-01-01
+1000000280|10 Southbourne Grove|Boscombe East|Dorset||CW1 |2JJ|CW1 2JJ |GB|2020-01-01
+1000000281|18 Keymer Road|Hassocks|West Sussex||DA6 |7DW|DA6 7DW |GB|2020-01-01
+1000000282|328 Lymington Road|Highcliffe|Dorset||TQ12|2AQ|TQ12 2AQ|GB|2020-01-01
+1000000283|20 High Street|Hungerford|Berkshire||PE21|6EN|PE21 6EN|GB|2020-01-01
+1000000284|101 High Street|Crowthorne|Berkshire||SO50|5RX|SO50 5RX|GB|2020-01-01
+1000000285|3 Station Hill|Cookham|Berkshire||E10 |6BB|E10 6BB |GB|2020-01-01
+1000000286|47 High Street|Egham|Surrey||LN5 |7DW|LN5 7DW |GB|2020-01-01
+1000000287|131 Broadway|Didcot|Oxfordshire||BT38|7AW|BT38 7AW|GB|2020-01-01
+1000000288|26-28 Market Street|Kingswinford|West Midlands||NR18|0AG|NR18 0AG|GB|2020-01-01
+1000000289|9-11 High Street|Leominster|Herefordshire||SN12|6LS|SN12 6LS|GB|2020-01-01
+1000000290|12 Market Street|Crewkerne|Somerset||BL1 |1HQ|BL1 1HQ |GB|2020-01-01
+1000000291|246 Upper Street|Islington|London||DE7 |8AH|DE7 8AH |GB|2020-01-01
+1000000292|135 Fenchurch Street|Fenchurch St|London||E6  |2JA|E6 2JA  |GB|2020-01-01
+1000000293|3 Dene Drive|Winsford|||WC1V|6PN|WC1V 6PN|GB|2020-01-01
+1000000294|46 Portman Square|Portman Square|London||TN30|6BJ|TN30 6BJ|GB|2020-01-01
+1000000295|5 West Street|New Alresford|Hampshire||W4  |1NP|W4 1NP  |GB|2020-01-01
+1000000296|62 Station Road|New Milton|Hampshire||ML6 |6EQ|ML6 6EQ |GB|2020-01-01
+1000000297|22 Linthorpe Road|Middlesbrough|Cleveland||PR7 |1BG|PR7 1BG |GB|2020-01-01
+1000000298|69 High Street|West Malling|Kent||S1  |1EQ|S1 1EQ  |GB|2020-01-01

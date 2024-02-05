@@ -1,0 +1,272 @@
+{
+  "uuid": "472d1a7b-5500-4d0b-ba88-771ca3d844da",
+  "title": "My Fraud Dashboard",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 0,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {},
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "New page",
+      "reports": [
+        {
+          "id": "e19d35a1-77e7-424f-bbeb-2477e8788ae4",
+          "title": "Total number of nodes",
+          "query": "MATCH (n)\nRETURN COUNT(n)\n\n\n",
+          "width": 4,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "54a77108-cb28-4d26-967a-4f33764d982b",
+          "title": "",
+          "query": "call db.schema.visualization()\n\n\n",
+          "width": 11,
+          "height": 4,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "TelephoneWork": "name",
+            "Account": "name",
+            "Email": "name",
+            "Address": "name",
+            "Transaction": "name",
+            "Person": "name",
+            "TelephoneHome": "name",
+            "TelephoneMob": "name",
+            "Case": "name",
+            "RECIEVES": "name",
+            "HAS_CASE": "name",
+            "HAS_TELEPHONE_HOME": "name",
+            "SENDS": "name",
+            "HAS_EMAIL": "name",
+            "HAS_TELEPHONE_MOBILE": "name",
+            "HAS_ACCOUNT": "name",
+            "HAS_TELEPHONE_WORK": "name",
+            "LIVES_AT": "name"
+          },
+          "settings": {
+            "backgroundColor": "#FFFFFF"
+          },
+          "schema": [
+            [
+              "TelephoneWork",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Account",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Email",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Address",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Transaction",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Person",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "TelephoneHome",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "TelephoneMob",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Case",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "RECIEVES",
+              "name"
+            ],
+            [
+              "HAS_CASE",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_HOME",
+              "name"
+            ],
+            [
+              "SENDS",
+              "name"
+            ],
+            [
+              "HAS_EMAIL",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_MOBILE",
+              "name"
+            ],
+            [
+              "HAS_ACCOUNT",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_WORK",
+              "name"
+            ],
+            [
+              "LIVES_AT",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "9e293c32-40dd-4d2b-82c4-b5330777fbba",
+          "title": "Total number of relationships",
+          "query": "MATCH (n)-[e]->(m)\nRETURN COUNT(e)\n\n\n\n",
+          "width": 4,
+          "height": 4,
+          "x": 4,
+          "y": 0,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "9bf5d4a3-13ad-4a02-85d0-0afef2f46728",
+          "title": "Number of nodes labels",
+          "query": "MATCH (n)\nRETURN labels(n), count(*) as count\nORDER BY count ASC\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 8,
+          "y": 0,
+          "type": "pie",
+          "selection": {
+            "index": "labels(n)",
+            "value": "count",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "1289e202-55ba-40f4-a3e4-5927ae006913",
+          "title": "Number of relationship types",
+          "query": "MATCH (n)-[e]->(m)\nRETURN type(e),count(*) as count\nORDER BY count ASC\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 14,
+          "y": 0,
+          "type": "pie",
+          "selection": {
+            "index": "type(e)",
+            "value": "count",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "b8aab468-e456-4fe6-b905-254b92cd82a5",
+          "title": "",
+          "query": "MATCH (p:Person)-[r]-(id)-[r2]-(p2:Person)\nreturn p,r,id,r2,p2\n\n\n",
+          "width": 12,
+          "height": 4,
+          "x": 11,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Person": "FullName",
+            "HAS_TELEPHONE_MOBILE": "(label)",
+            "TelephoneMob": "(label)",
+            "HAS_TELEPHONE_HOME": "(label)",
+            "TelephoneHome": "(label)",
+            "HAS_EMAIL": "(label)",
+            "Email": "(label)",
+            "HAS_TELEPHONE_WORK": "(label)",
+            "TelephoneWork": "(label)"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Person",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "HAS_TELEPHONE_MOBILE"
+            ],
+            [
+              "TelephoneMob",
+              "TelephoneMob"
+            ],
+            [
+              "HAS_TELEPHONE_HOME"
+            ],
+            [
+              "TelephoneHome",
+              "TelephoneHome"
+            ],
+            [
+              "HAS_EMAIL"
+            ],
+            [
+              "Email",
+              "Email"
+            ],
+            [
+              "HAS_TELEPHONE_WORK"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": []
+  }
+}

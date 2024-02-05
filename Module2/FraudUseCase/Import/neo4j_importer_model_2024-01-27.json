@@ -1,0 +1,2302 @@
+{
+  "version": "1.2.0",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "caption": "Person"
+      },
+      {
+        "id": "n1",
+        "position": {
+          "x": 262.1862992657615,
+          "y": 0
+        },
+        "caption": "Account"
+      },
+      {
+        "id": "n3",
+        "position": {
+          "x": 174.4909801048997,
+          "y": -255.14914487595652
+        },
+        "caption": "Address"
+      },
+      {
+        "id": "n4",
+        "position": {
+          "x": -97.63344409052497,
+          "y": -293.2846720575808
+        },
+        "caption": "TelephoneMob"
+      },
+      {
+        "id": "n5",
+        "position": {
+          "x": -227,
+          "y": -169
+        },
+        "caption": "TelephoneHome"
+      },
+      {
+        "id": "n6",
+        "position": {
+          "x": 141,
+          "y": 189
+        },
+        "caption": "Case"
+      },
+      {
+        "id": "n7",
+        "position": {
+          "x": -307.97858193264807,
+          "y": 26.407978712039952
+        },
+        "caption": "TelephoneWork"
+      },
+      {
+        "id": "n8",
+        "position": {
+          "x": -198.59786237091896,
+          "y": 236.86932543198145
+        },
+        "caption": "Email"
+      },
+      {
+        "id": "n9",
+        "position": {
+          "x": 493.1038586665567,
+          "y": 0
+        },
+        "caption": "Transaction"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "HAS_ACCOUNT",
+        "fromId": "n0",
+        "toId": "n1"
+      },
+      {
+        "id": "n3",
+        "type": "LIVES_AT",
+        "fromId": "n0",
+        "toId": "n3"
+      },
+      {
+        "id": "n4",
+        "type": "HAS_TELEPHONE_MOBILE",
+        "fromId": "n0",
+        "toId": "n4"
+      },
+      {
+        "id": "n5",
+        "type": "HAS_TELEPHONE_HOME",
+        "fromId": "n0",
+        "toId": "n5"
+      },
+      {
+        "id": "n6",
+        "type": "HAS_CASE",
+        "fromId": "n0",
+        "toId": "n6"
+      },
+      {
+        "id": "n7",
+        "type": "HAS_TELEPHONE_WORK",
+        "fromId": "n0",
+        "toId": "n7"
+      },
+      {
+        "id": "n8",
+        "type": "HAS_EMAIL",
+        "fromId": "n0",
+        "toId": "n8"
+      },
+      {
+        "id": "n9",
+        "type": "SENDS",
+        "fromId": "n1",
+        "toId": "n9"
+      },
+      {
+        "id": "n10",
+        "type": "RECEIVES",
+        "fromId": "n9",
+        "toId": "n1"
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "1.2.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:n0",
+            "token": "Person"
+          },
+          {
+            "$id": "nl:n1",
+            "token": "Account"
+          },
+          {
+            "$id": "nl:n3",
+            "token": "Address"
+          },
+          {
+            "$id": "nl:n4",
+            "token": "TelephoneMob"
+          },
+          {
+            "$id": "nl:n5",
+            "token": "TelephoneHome"
+          },
+          {
+            "$id": "nl:n6",
+            "token": "Case"
+          },
+          {
+            "$id": "nl:n7",
+            "token": "TelephoneWork"
+          },
+          {
+            "$id": "nl:n8",
+            "token": "Email"
+          },
+          {
+            "$id": "nl:n9",
+            "token": "Transaction"
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:n0",
+            "token": "HAS_ACCOUNT"
+          },
+          {
+            "$id": "rt:n3",
+            "token": "LIVES_AT"
+          },
+          {
+            "$id": "rt:n4",
+            "token": "HAS_TELEPHONE_MOBILE"
+          },
+          {
+            "$id": "rt:n5",
+            "token": "HAS_TELEPHONE_HOME"
+          },
+          {
+            "$id": "rt:n6",
+            "token": "HAS_CASE"
+          },
+          {
+            "$id": "rt:n7",
+            "token": "HAS_TELEPHONE_WORK"
+          },
+          {
+            "$id": "rt:n8",
+            "token": "HAS_EMAIL"
+          },
+          {
+            "$id": "rt:n9",
+            "token": "SENDS"
+          },
+          {
+            "$id": "rt:n10",
+            "token": "RECEIVES"
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:n0",
+            "labels": [
+              {
+                "$ref": "#nl:n0"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "CustomerNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "FullName",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:3",
+                "token": "DOB",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:4",
+                "token": "DOD",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "Nationality",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:6",
+                "token": "NINumber",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:7",
+                "token": "NBSRelationshipStartDate",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:8",
+                "token": "Gender",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:9",
+                "token": "MaritalStatusFlag",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:10",
+                "token": "ExtractDate",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n1",
+            "labels": [
+              {
+                "$ref": "#nl:n1"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:30",
+                "token": "CustomerNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:31",
+                "token": "ExternalAccountNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:32",
+                "token": "InternalAccountNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:52",
+                "token": "AgreementOpenDate",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:53",
+                "token": "AccountSubType",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n3",
+            "labels": [
+              {
+                "$ref": "#nl:n3"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:33",
+                "token": "CustomerNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:34",
+                "token": "Address1",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:35",
+                "token": "Address2",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:36",
+                "token": "Address3",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:37",
+                "token": "Address4",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:38",
+                "token": "PostCodeOut",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:39",
+                "token": "PostCodeIn",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:40",
+                "token": "PostCode",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:41",
+                "token": "CountryCode",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:42",
+                "token": "ExtractDate",
+                "type": {
+                  "type": "datetime"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n4",
+            "labels": [
+              {
+                "$ref": "#nl:n4"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:43",
+                "token": "TelephoneMob",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n5",
+            "labels": [
+              {
+                "$ref": "#nl:n5"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:44",
+                "token": "TelephoneHome",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n6",
+            "labels": [
+              {
+                "$ref": "#nl:n6"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:47",
+                "token": "CustomerNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:48",
+                "token": "Case_Ref",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:49",
+                "token": "Date_Opened",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:50",
+                "token": "Workflow",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:51",
+                "token": "AIM_Status",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n7",
+            "labels": [
+              {
+                "$ref": "#nl:n7"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:45",
+                "token": "TelephoneWork",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n8",
+            "labels": [
+              {
+                "$ref": "#nl:n8"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:46",
+                "token": "Email",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          },
+          {
+            "$id": "n:n9",
+            "labels": [
+              {
+                "$ref": "#nl:n9"
+              }
+            ],
+            "properties": [
+              {
+                "$id": "p:54",
+                "token": "ExternalReferenceNumber",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:55",
+                "token": "PaymentDistributionReference",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:56",
+                "token": "InternalMessageType",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:57",
+                "token": "UserReferenceNumber",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:58",
+                "token": "SendingAccount",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:59",
+                "token": "OriginatingCustomerAccountName",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:60",
+                "token": "OriginatorsReference",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:61",
+                "token": "OriginatingCISNumber",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:62",
+                "token": "OriginSystem",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:63",
+                "token": "ReceivingAccount",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:64",
+                "token": "DestinationCustomerAccountName",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:65",
+                "token": "DestinationCISNumber",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:66",
+                "token": "DestinationSystem",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:67",
+                "token": "CreateDateTime",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:68",
+                "token": "EffectiveDate",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:69",
+                "token": "ReceiveDateTime",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:70",
+                "token": "Amount",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:n0",
+            "type": {
+              "$ref": "#rt:n0"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n1"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n3",
+            "type": {
+              "$ref": "#rt:n3"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n3"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n4",
+            "type": {
+              "$ref": "#rt:n4"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n4"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n5",
+            "type": {
+              "$ref": "#rt:n5"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n5"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n6",
+            "type": {
+              "$ref": "#rt:n6"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n6"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n7",
+            "type": {
+              "$ref": "#rt:n7"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n7"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n8",
+            "type": {
+              "$ref": "#rt:n8"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n8"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n9",
+            "type": {
+              "$ref": "#rt:n9"
+            },
+            "from": {
+              "$ref": "#n:n1"
+            },
+            "to": {
+              "$ref": "#n:n9"
+            },
+            "properties": []
+          },
+          {
+            "$id": "r:n10",
+            "type": {
+              "$ref": "#rt:n10"
+            },
+            "from": {
+              "$ref": "#n:n9"
+            },
+            "to": {
+              "$ref": "#n:n1"
+            },
+            "properties": []
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:n4"
+          },
+          "keyProperty": {
+            "$ref": "#p:43"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n3"
+          },
+          "keyProperty": {
+            "$ref": "#p:40"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n5"
+          },
+          "keyProperty": {
+            "$ref": "#p:44"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n7"
+          },
+          "keyProperty": {
+            "$ref": "#p:45"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n8"
+          },
+          "keyProperty": {
+            "$ref": "#p:46"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n6"
+          },
+          "keyProperty": {
+            "$ref": "#p:48"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n1"
+          },
+          "keyProperty": {
+            "$ref": "#p:31"
+          }
+        },
+        {
+          "node": {
+            "$ref": "#n:n9"
+          },
+          "keyProperty": {
+            "$ref": "#p:54"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local/csv",
+        "tableSchemas": [
+          {
+            "$id": "f:2",
+            "name": "Address.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000000001",
+                "include": true
+              },
+              {
+                "name": "Address1",
+                "type": "string",
+                "sample": "56 South Street",
+                "include": true
+              },
+              {
+                "name": "Address2",
+                "type": "string",
+                "sample": "Romford",
+                "include": true
+              },
+              {
+                "name": "Address3",
+                "type": "string",
+                "sample": "Essex",
+                "include": true
+              },
+              {
+                "name": "Address4",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "PostCodeOut",
+                "type": "string",
+                "sample": "SA11",
+                "include": true
+              },
+              {
+                "name": "PostCodeIn",
+                "type": "string",
+                "sample": "1EB",
+                "include": true
+              },
+              {
+                "name": "PostCode",
+                "type": "string",
+                "sample": "SA11 1EB",
+                "include": true
+              },
+              {
+                "name": "CountryCode",
+                "type": "string",
+                "sample": "GB",
+                "include": true
+              },
+              {
+                "name": "ExtractDate",
+                "type": "datetime",
+                "sample": "2020-01-01",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:3",
+            "name": "Case.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000000000",
+                "include": true
+              },
+              {
+                "name": "Case_Ref",
+                "type": "integer",
+                "sample": "1000228",
+                "include": true
+              },
+              {
+                "name": "Date_Opened",
+                "type": "string",
+                "sample": "22/08/2021",
+                "include": true
+              },
+              {
+                "name": "Workflow",
+                "type": "string",
+                "sample": "FIU",
+                "include": true
+              },
+              {
+                "name": "AIM_Status",
+                "type": "string",
+                "sample": "Level 1 - Closed Not Reported",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:4",
+            "name": "Contact.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000000000",
+                "include": true
+              },
+              {
+                "name": "TelephoneHome",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "TelephoneMob",
+                "type": "string",
+                "sample": "01164 346000",
+                "include": true
+              },
+              {
+                "name": "TelephoneWork",
+                "type": "string",
+                "sample": "04275 609000",
+                "include": true
+              },
+              {
+                "name": "Email",
+                "type": "string",
+                "sample": "000basil.rozenekdps@test.com",
+                "include": true
+              },
+              {
+                "name": "ExtractDate",
+                "type": "datetime",
+                "sample": "2020-01-01",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:5",
+            "name": "Person.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000999997",
+                "include": true
+              },
+              {
+                "name": "FullName",
+                "type": "string",
+                "sample": "Mr  R  Risk  Squad   Testing",
+                "include": true
+              },
+              {
+                "name": "DOB",
+                "type": "string",
+                "sample": "07/05/2021",
+                "include": true
+              },
+              {
+                "name": "DOD",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "Nationality",
+                "type": "string",
+                "sample": "GB",
+                "include": true
+              },
+              {
+                "name": "NINumber",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "NBSRelationshipStartDate",
+                "type": "string",
+                "sample": "07/05/2021",
+                "include": true
+              },
+              {
+                "name": "Gender",
+                "type": "string",
+                "sample": "M",
+                "include": true
+              },
+              {
+                "name": "MaritalStatusFlag",
+                "type": "string",
+                "sample": "M",
+                "include": true
+              },
+              {
+                "name": "ExtractDate",
+                "type": "datetime",
+                "sample": "2020-01-01",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:6",
+            "name": "TransactionIn.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ExternalReferenceNumber",
+                "type": "string",
+                "sample": "TRN02058000",
+                "include": true
+              },
+              {
+                "name": "PaymentDistributionReference",
+                "type": "string",
+                "sample": "27693e22-5afe-e611-bf4b-005056ba26fc  ",
+                "include": true
+              },
+              {
+                "name": "InternalMessageType",
+                "type": "string",
+                "sample": "InboundSIP",
+                "include": true
+              },
+              {
+                "name": "UserReferenceNumber",
+                "type": "string",
+                "sample": "FP17060I00100609",
+                "include": true
+              },
+              {
+                "name": "SendingAccount",
+                "type": "string",
+                "sample": "580020 02058000                               ",
+                "include": true
+              },
+              {
+                "name": "OriginatingCustomerAccountName",
+                "type": "string",
+                "sample": "58000 Orig Cust Acc Name",
+                "include": true
+              },
+              {
+                "name": "OriginatorsReference",
+                "type": "string",
+                "sample": "02058000 Ref Info",
+                "include": true
+              },
+              {
+                "name": "OriginatingCISNumber",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OriginSystem",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "ReceivingAccount",
+                "type": "string",
+                "sample": "070406 10000020                               ",
+                "include": true
+              },
+              {
+                "name": "DestinationCustomerAccountName",
+                "type": "string",
+                "sample": "58000 Ben Cust Acc Name",
+                "include": true
+              },
+              {
+                "name": "DestinationCISNumber",
+                "type": "integer",
+                "sample": "1000000006",
+                "include": true
+              },
+              {
+                "name": "DestinationSystem",
+                "type": "string",
+                "sample": "BankingSavingsSap",
+                "include": true
+              },
+              {
+                "name": "CreateDateTime",
+                "type": "string",
+                "sample": "03/01/2020",
+                "include": true
+              },
+              {
+                "name": "EffectiveDate",
+                "type": "string",
+                "sample": "03/01/2017",
+                "include": true
+              },
+              {
+                "name": "ReceiveDateTime",
+                "type": "string",
+                "sample": "03/01/2017",
+                "include": true
+              },
+              {
+                "name": "Amount",
+                "type": "float",
+                "sample": "580.00",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:8",
+            "name": "Application.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000000009",
+                "include": true
+              },
+              {
+                "name": "Application_Key",
+                "type": "string",
+                "sample": "461D92A3-7D43-4B7C-AA3A-AE580111DB0B",
+                "include": true
+              },
+              {
+                "name": "ApplicationNumber",
+                "type": "string",
+                "sample": "M616619880-001",
+                "include": true
+              },
+              {
+                "name": "ProductCode",
+                "type": "string",
+                "sample": "MO1",
+                "include": true
+              },
+              {
+                "name": "ApplicationDate",
+                "type": "string",
+                "sample": "14/03/2022",
+                "include": true
+              },
+              {
+                "name": "CreditScoreDecision",
+                "type": "string",
+                "sample": "AA",
+                "include": true
+              },
+              {
+                "name": "RiskBand",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "BankruptcyFlag",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "CreditLimit",
+                "type": "float",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "CrossSaleOffered",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OverdraftRequired",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OverdraftOffered",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OverdraftLimit",
+                "type": "float",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IpAddress",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OccupationCode",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "EmploymentType",
+                "type": "string",
+                "sample": "Employed",
+                "include": true
+              },
+              {
+                "name": "EmploymentStartDate",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "Income",
+                "type": "float",
+                "sample": "150000.00",
+                "include": true
+              },
+              {
+                "name": "PaymentMethod",
+                "type": "string",
+                "sample": "Yearly",
+                "include": true
+              },
+              {
+                "name": "IDType1",
+                "type": "integer",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDSerial1",
+                "type": "integer",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDRef1",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDDate1",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDType2",
+                "type": "integer",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDSerial2",
+                "type": "integer",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDRef2",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDDate2",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDType3",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDSerial3",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDRef3",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDDate3",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDType4",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDSerial4",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDRef4",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "IDDate4",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "FraudType",
+                "type": "string",
+                "sample": "Waiting",
+                "include": true
+              },
+              {
+                "name": "ReferredBy",
+                "type": "string",
+                "sample": "SYSTEM",
+                "include": true
+              },
+              {
+                "name": "LatestStatusChange",
+                "type": "string",
+                "sample": "15/03/2022",
+                "include": true
+              },
+              {
+                "name": "Reason",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "SubFraudType1",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "SubFraudType2",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "SubFraudType3",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "ChecksFailedKey",
+                "type": "string",
+                "sample": "",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:9",
+            "name": "Employer.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000000000",
+                "include": true
+              },
+              {
+                "name": "LastAmendedDateTime",
+                "type": "string",
+                "sample": "07/05/2021",
+                "include": true
+              },
+              {
+                "name": "ApplicationID",
+                "type": "integer",
+                "sample": "1000000183",
+                "include": true
+              },
+              {
+                "name": "AccountNumber",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "Employer",
+                "type": "string",
+                "sample": "general dynamic",
+                "include": true
+              },
+              {
+                "name": "WorkAddress1",
+                "type": "string",
+                "sample": "56SouthStreet",
+                "include": true
+              },
+              {
+                "name": "WorkAddress2",
+                "type": "string",
+                "sample": "Romford",
+                "include": true
+              },
+              {
+                "name": "WorkAddress3",
+                "type": "string",
+                "sample": "Essex",
+                "include": true
+              },
+              {
+                "name": "WorkAddress4",
+                "type": "string",
+                "sample": "Essex",
+                "include": true
+              },
+              {
+                "name": "WorkPostcode",
+                "type": "string",
+                "sample": "AB10 1PA",
+                "include": true
+              },
+              {
+                "name": "WorkCountry",
+                "type": "string",
+                "sample": "GB",
+                "include": true
+              },
+              {
+                "name": "WorkTelephone",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OccupationStatus",
+                "type": "string",
+                "sample": "Full Time",
+                "include": true
+              },
+              {
+                "name": "EmploymentStartDate",
+                "type": "string",
+                "sample": "01/2000",
+                "include": true
+              },
+              {
+                "name": "Salary",
+                "type": "float",
+                "sample": "28000.00",
+                "include": true
+              },
+              {
+                "name": "BranchNo",
+                "type": "integer",
+                "sample": "0575",
+                "include": true
+              },
+              {
+                "name": "ExtractDate",
+                "type": "datetime",
+                "sample": "2020-01-01",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:10",
+            "name": "Account.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "CustomerNumber",
+                "type": "integer",
+                "sample": "1000999997",
+                "include": true
+              },
+              {
+                "name": "ExternalAccountNumber",
+                "type": "integer",
+                "sample": "07040600750874",
+                "include": true
+              },
+              {
+                "name": "InternalAccountNumber",
+                "type": "integer",
+                "sample": "0575600750874",
+                "include": true
+              },
+              {
+                "name": "AgreementOpenDate",
+                "type": "string",
+                "sample": "26/08/2022",
+                "include": true
+              },
+              {
+                "name": "AccountSubType",
+                "type": "integer",
+                "sample": "7002",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "f:11",
+            "name": "TransactionOut.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "ExternalReferenceNumber",
+                "type": "string",
+                "sample": "FP17060O00100538",
+                "include": true
+              },
+              {
+                "name": "PaymentDistributionReference",
+                "type": "string",
+                "sample": "28c6e7e8-53fe-e611-bf4b-005056ba26fc",
+                "include": true
+              },
+              {
+                "name": "InternalMessageType",
+                "type": "string",
+                "sample": "OutboundSIP",
+                "include": true
+              },
+              {
+                "name": "UserReferenceNumber",
+                "type": "string",
+                "sample": "FP17060O00100538",
+                "include": true
+              },
+              {
+                "name": "SendingAccount",
+                "type": "integer",
+                "sample": "07040610000021",
+                "include": true
+              },
+              {
+                "name": "OriginatingCustomerAccountName",
+                "type": "string",
+                "sample": "Catchpole",
+                "include": true
+              },
+              {
+                "name": "OriginatorsReference",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "OriginatingCISNumber",
+                "type": "integer",
+                "sample": "1000000006",
+                "include": true
+              },
+              {
+                "name": "OriginSystem",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "ReceivingAccount",
+                "type": "integer",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "DestinationCustomerAccountName",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "DestinationCISNumber",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "DestinationSystem",
+                "type": "string",
+                "sample": "",
+                "include": true
+              },
+              {
+                "name": "CreateDateTime",
+                "type": "string",
+                "sample": "27/07/2022",
+                "include": true
+              },
+              {
+                "name": "EffectiveDate",
+                "type": "string",
+                "sample": "03/01/2017",
+                "include": true
+              },
+              {
+                "name": "ReceiveDateTime",
+                "type": "string",
+                "sample": "03/01/2017",
+                "include": true
+              },
+              {
+                "name": "Amount",
+                "type": "float",
+                "sample": "56.44",
+                "include": true
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "tableSchema": {
+            "$ref": "#f:5"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "CustomerNumber",
+              "property": {
+                "$ref": "#p:1"
+              }
+            },
+            {
+              "fieldName": "FullName",
+              "property": {
+                "$ref": "#p:2"
+              }
+            },
+            {
+              "fieldName": "DOB",
+              "property": {
+                "$ref": "#p:3"
+              }
+            },
+            {
+              "fieldName": "DOD",
+              "property": {
+                "$ref": "#p:4"
+              }
+            },
+            {
+              "fieldName": "Nationality",
+              "property": {
+                "$ref": "#p:5"
+              }
+            },
+            {
+              "fieldName": "NINumber",
+              "property": {
+                "$ref": "#p:6"
+              }
+            },
+            {
+              "fieldName": "NBSRelationshipStartDate",
+              "property": {
+                "$ref": "#p:7"
+              }
+            },
+            {
+              "fieldName": "Gender",
+              "property": {
+                "$ref": "#p:8"
+              }
+            },
+            {
+              "fieldName": "MaritalStatusFlag",
+              "property": {
+                "$ref": "#p:9"
+              }
+            },
+            {
+              "fieldName": "ExtractDate",
+              "property": {
+                "$ref": "#p:10"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n3"
+          },
+          "tableSchema": {
+            "$ref": "#f:2"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "CustomerNumber",
+              "property": {
+                "$ref": "#p:33"
+              }
+            },
+            {
+              "fieldName": "Address1",
+              "property": {
+                "$ref": "#p:34"
+              }
+            },
+            {
+              "fieldName": "Address2",
+              "property": {
+                "$ref": "#p:35"
+              }
+            },
+            {
+              "fieldName": "Address3",
+              "property": {
+                "$ref": "#p:36"
+              }
+            },
+            {
+              "fieldName": "Address4",
+              "property": {
+                "$ref": "#p:37"
+              }
+            },
+            {
+              "fieldName": "PostCodeOut",
+              "property": {
+                "$ref": "#p:38"
+              }
+            },
+            {
+              "fieldName": "PostCodeIn",
+              "property": {
+                "$ref": "#p:39"
+              }
+            },
+            {
+              "fieldName": "PostCode",
+              "property": {
+                "$ref": "#p:40"
+              }
+            },
+            {
+              "fieldName": "CountryCode",
+              "property": {
+                "$ref": "#p:41"
+              }
+            },
+            {
+              "fieldName": "ExtractDate",
+              "property": {
+                "$ref": "#p:42"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n4"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "TelephoneMob",
+              "property": {
+                "$ref": "#p:43"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n5"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "TelephoneHome",
+              "property": {
+                "$ref": "#p:44"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n7"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "TelephoneWork",
+              "property": {
+                "$ref": "#p:45"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n8"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "Email",
+              "property": {
+                "$ref": "#p:46"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n6"
+          },
+          "tableSchema": {
+            "$ref": "#f:3"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "CustomerNumber",
+              "property": {
+                "$ref": "#p:47"
+              }
+            },
+            {
+              "fieldName": "Case_Ref",
+              "property": {
+                "$ref": "#p:48"
+              }
+            },
+            {
+              "fieldName": "Date_Opened",
+              "property": {
+                "$ref": "#p:49"
+              }
+            },
+            {
+              "fieldName": "Workflow",
+              "property": {
+                "$ref": "#p:50"
+              }
+            },
+            {
+              "fieldName": "AIM_Status",
+              "property": {
+                "$ref": "#p:51"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n1"
+          },
+          "tableSchema": {
+            "$ref": "#f:10"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "CustomerNumber",
+              "property": {
+                "$ref": "#p:30"
+              }
+            },
+            {
+              "fieldName": "ExternalAccountNumber",
+              "property": {
+                "$ref": "#p:31"
+              }
+            },
+            {
+              "fieldName": "InternalAccountNumber",
+              "property": {
+                "$ref": "#p:32"
+              }
+            },
+            {
+              "fieldName": "AgreementOpenDate",
+              "property": {
+                "$ref": "#p:52"
+              }
+            },
+            {
+              "fieldName": "AccountSubType",
+              "property": {
+                "$ref": "#p:53"
+              }
+            }
+          ]
+        },
+        {
+          "node": {
+            "$ref": "#n:n9"
+          },
+          "tableSchema": {
+            "$ref": "#f:11"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "ExternalReferenceNumber",
+              "property": {
+                "$ref": "#p:54"
+              }
+            },
+            {
+              "fieldName": "PaymentDistributionReference",
+              "property": {
+                "$ref": "#p:55"
+              }
+            },
+            {
+              "fieldName": "InternalMessageType",
+              "property": {
+                "$ref": "#p:56"
+              }
+            },
+            {
+              "fieldName": "UserReferenceNumber",
+              "property": {
+                "$ref": "#p:57"
+              }
+            },
+            {
+              "fieldName": "SendingAccount",
+              "property": {
+                "$ref": "#p:58"
+              }
+            },
+            {
+              "fieldName": "OriginatingCustomerAccountName",
+              "property": {
+                "$ref": "#p:59"
+              }
+            },
+            {
+              "fieldName": "OriginatorsReference",
+              "property": {
+                "$ref": "#p:60"
+              }
+            },
+            {
+              "fieldName": "OriginatingCISNumber",
+              "property": {
+                "$ref": "#p:61"
+              }
+            },
+            {
+              "fieldName": "OriginSystem",
+              "property": {
+                "$ref": "#p:62"
+              }
+            },
+            {
+              "fieldName": "ReceivingAccount",
+              "property": {
+                "$ref": "#p:63"
+              }
+            },
+            {
+              "fieldName": "DestinationCustomerAccountName",
+              "property": {
+                "$ref": "#p:64"
+              }
+            },
+            {
+              "fieldName": "DestinationCISNumber",
+              "property": {
+                "$ref": "#p:65"
+              }
+            },
+            {
+              "fieldName": "DestinationSystem",
+              "property": {
+                "$ref": "#p:66"
+              }
+            },
+            {
+              "fieldName": "CreateDateTime",
+              "property": {
+                "$ref": "#p:67"
+              }
+            },
+            {
+              "fieldName": "EffectiveDate",
+              "property": {
+                "$ref": "#p:68"
+              }
+            },
+            {
+              "fieldName": "ReceiveDateTime",
+              "property": {
+                "$ref": "#p:69"
+              }
+            },
+            {
+              "fieldName": "Amount",
+              "property": {
+                "$ref": "#p:70"
+              }
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:n3"
+          },
+          "tableSchema": {
+            "$ref": "#f:2"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "PostCode"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n4"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "TelephoneMob"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n5"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "TelephoneHome"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n7"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "TelephoneWork"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n8"
+          },
+          "tableSchema": {
+            "$ref": "#f:4"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "Email"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n6"
+          },
+          "tableSchema": {
+            "$ref": "#f:3"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "Case_Ref"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n0"
+          },
+          "tableSchema": {
+            "$ref": "#f:10"
+          },
+          "fromMapping": {
+            "fieldName": "CustomerNumber"
+          },
+          "toMapping": {
+            "fieldName": "ExternalAccountNumber"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n9"
+          },
+          "tableSchema": {
+            "$ref": "#f:11"
+          },
+          "fromMapping": {
+            "fieldName": "SendingAccount"
+          },
+          "toMapping": {
+            "fieldName": "ExternalReferenceNumber"
+          },
+          "propertyMappings": []
+        },
+        {
+          "relationship": {
+            "$ref": "#r:n10"
+          },
+          "tableSchema": {
+            "$ref": "#f:11"
+          },
+          "fromMapping": {
+            "fieldName": "ExternalReferenceNumber"
+          },
+          "toMapping": {
+            "fieldName": "ReceivingAccount"
+          },
+          "propertyMappings": []
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}

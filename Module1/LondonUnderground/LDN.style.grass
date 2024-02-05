@@ -1,0 +1,91 @@
+node {
+  diameter: 50px;
+  color: #A5ABB6;
+  border-color: #9AA1AC;
+  border-width: 2px;
+  text-color-internal: #FFFFFF;
+  font-size: 10px;
+}
+relationship {
+  color: #A5ABB6;
+  shaft-width: 1px;
+  font-size: 8px;
+  padding: 3px;
+  text-color-external: #000000;
+  text-color-internal: #FFFFFF;
+  caption: "<type>";
+}
+relationship.DISTRICT {
+  color: #006633;
+  border-color: #447666;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.CIRCLE {
+  color: #FFCC00;
+  border-color: #d7a013;
+  text-color-internal: #2A2C34;
+  shaft-width: 3px;
+}
+relationship.JUBILEE {
+  color: #868F98;
+  border-color: #c0a378;
+  text-color-internal: #2A2C34;
+  shaft-width: 3px;
+}
+relationship.CENTRAL {
+  color: #CC3333;
+  border-color: #eb2728;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.PICCADILLY {
+  color: #000099;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.NORTHERN {
+  color: #000000;
+  border-color: #423204;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.BAKERLOO {
+  color: #996633;
+  border-color: #423204;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.VICTORIA {
+  color: #0099CC;
+  border-color: #23b3d7;
+  text-color-internal: #2A2C34;
+}
+relationship.HAMMERSMITH_AND_CITY {
+  color: #CC9999;
+  border-color: #da7298;
+  text-color-internal: #2A2C34;
+  shaft-width: 3px;
+}
+relationship.DLR {
+  color: #009999;
+  border-color: #2870c2;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+relationship.METROPOLITAN {
+  color: #660066;
+  border-color: #cc3c6c;
+  text-color-internal: #FFFFFF;
+  shaft-width: 3px;
+}
+node.Station {
+  defaultCaption: "<id>";
+  caption: "{name}";
+}
+relationship.WATERLOO_AND_CITY {
+  color: #66CCCC;
+  border-color: #447666;
+  text-color-internal: #FFFFFF;
+}
