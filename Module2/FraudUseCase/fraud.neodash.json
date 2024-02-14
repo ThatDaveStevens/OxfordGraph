@@ -11,7 +11,7 @@
   },
   "pages": [
     {
-      "title": "New page",
+      "title": "Module 2",
       "reports": [
         {
           "id": "e19d35a1-77e7-424f-bbeb-2477e8788ae4",
@@ -28,7 +28,7 @@
         },
         {
           "id": "54a77108-cb28-4d26-967a-4f33764d982b",
-          "title": "",
+          "title": "Data Model",
           "query": "call db.schema.visualization()\n\n\n",
           "width": 11,
           "height": 4,
@@ -45,7 +45,7 @@
             "TelephoneHome": "name",
             "TelephoneMob": "name",
             "Case": "name",
-            "RECIEVES": "name",
+            "RECEIVES": "name",
             "HAS_CASE": "name",
             "HAS_TELEPHONE_HOME": "name",
             "SENDS": "name",
@@ -114,7 +114,7 @@
               "constraints"
             ],
             [
-              "RECIEVES",
+              "RECEIVES",
               "name"
             ],
             [
@@ -200,7 +200,7 @@
         },
         {
           "id": "b8aab468-e456-4fe6-b905-254b92cd82a5",
-          "title": "",
+          "title": "Shared Personal Information",
           "query": "MATCH (p:Person)-[r]-(id)-[r2]-(p2:Person)\nreturn p,r,id,r2,p2\n\n\n",
           "width": 12,
           "height": 4,
@@ -211,25 +211,26 @@
             "Person": "FullName",
             "HAS_TELEPHONE_MOBILE": "(label)",
             "TelephoneMob": "(label)",
+            "HAS_TELEPHONE_WORK": "(label)",
+            "TelephoneWork": "(label)",
             "HAS_TELEPHONE_HOME": "(label)",
             "TelephoneHome": "(label)",
             "HAS_EMAIL": "(label)",
-            "Email": "(label)",
-            "HAS_TELEPHONE_WORK": "(label)",
-            "TelephoneWork": "(label)"
+            "Email": "(label)"
           },
           "settings": {},
           "schema": [
             [
               "Person",
+              "NINumber",
               "CustomerNumber",
               "MaritalStatusFlag",
               "DOB",
               "FullName",
-              "ExtractDate",
               "NBSRelationshipStartDate",
               "Gender",
-              "Nationality"
+              "Nationality",
+              "ExtractDate"
             ],
             [
               "HAS_TELEPHONE_MOBILE"
@@ -237,6 +238,13 @@
             [
               "TelephoneMob",
               "TelephoneMob"
+            ],
+            [
+              "HAS_TELEPHONE_WORK"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
             ],
             [
               "HAS_TELEPHONE_HOME"
@@ -251,15 +259,26 @@
             [
               "Email",
               "Email"
-            ],
-            [
-              "HAS_TELEPHONE_WORK"
-            ],
-            [
-              "TelephoneWork",
-              "TelephoneWork"
             ]
           ]
+        }
+      ]
+    },
+    {
+      "title": "Module 3 🤫",
+      "reports": [
+        {
+          "id": "97ea4cb6-36f0-481a-b089-4e7090f1debe",
+          "title": "",
+          "query": "MATCH (:Account)-[:SENDS]->(t:Transaction)\nRETURN SUM(t.Amount) as TotalTransactionValue",
+          "width": 6,
+          "height": 4,
+          "x": 0,
+          "y": 0,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
         }
       ]
     }
@@ -267,6 +286,26 @@
   "parameters": {},
   "extensions": {
     "active": true,
-    "activeReducers": []
+    "activeReducers": [
+      "DASHBOARD/EXTENSIONS/QUERY_TRANSLATOR/"
+    ],
+    "query-translator": {
+      "active": true,
+      "modelProvider": "OpenAI",
+      "settings": {
+        "modelType": "gpt-4"
+      },
+      "examples": [
+        {
+          "question": "People with accounts",
+          "answer": "match (p:Person)-[:HOLDS]->(a:Account) return p.Fullname"
+        }
+      ],
+      "lastMessages": {
+        "1": {
+          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "What is the total value of all transactions?"
+        }
+      }
+    }
   }
 }
