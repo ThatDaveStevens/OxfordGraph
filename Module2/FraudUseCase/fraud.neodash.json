@@ -6,7 +6,12 @@
     "pagenumber": 0,
     "editable": true,
     "fullscreenEnabled": false,
-    "parameters": {},
+    "parameters": {
+      "neodash_account_externalaccountnumber_1": 7040610000015,
+      "neodash_account_externalaccountnumber_1_display": 7040610000015,
+      "neodash_account_externalaccountnumber_2": 7040610000013,
+      "neodash_account_externalaccountnumber_2_display": 7040610000013
+    },
     "theme": "light"
   },
   "pages": [
@@ -17,8 +22,8 @@
           "id": "e19d35a1-77e7-424f-bbeb-2477e8788ae4",
           "title": "Total number of nodes",
           "query": "MATCH (n)\nRETURN COUNT(n)\n\n\n",
-          "width": 4,
-          "height": 4,
+          "width": 7,
+          "height": 2,
           "x": 0,
           "y": 0,
           "type": "value",
@@ -155,10 +160,10 @@
           "id": "9e293c32-40dd-4d2b-82c4-b5330777fbba",
           "title": "Total number of relationships",
           "query": "MATCH (n)-[e]->(m)\nRETURN COUNT(e)\n\n\n\n",
-          "width": 4,
-          "height": 4,
-          "x": 4,
-          "y": 0,
+          "width": 7,
+          "height": 2,
+          "x": 0,
+          "y": 2,
           "type": "value",
           "selection": {},
           "settings": {},
@@ -168,9 +173,9 @@
           "id": "9bf5d4a3-13ad-4a02-85d0-0afef2f46728",
           "title": "Number of nodes labels",
           "query": "MATCH (n)\nRETURN labels(n), count(*) as count\nORDER BY count ASC\n\n\n",
-          "width": 6,
+          "width": 8,
           "height": 4,
-          "x": 8,
+          "x": 7,
           "y": 0,
           "type": "pie",
           "selection": {
@@ -185,9 +190,9 @@
           "id": "1289e202-55ba-40f4-a3e4-5927ae006913",
           "title": "Number of relationship types",
           "query": "MATCH (n)-[e]->(m)\nRETURN type(e),count(*) as count\nORDER BY count ASC\n\n\n",
-          "width": 6,
+          "width": 8,
           "height": 4,
-          "x": 14,
+          "x": 15,
           "y": 0,
           "type": "pie",
           "selection": {
@@ -270,15 +275,96 @@
         {
           "id": "97ea4cb6-36f0-481a-b089-4e7090f1debe",
           "title": "",
-          "query": "MATCH (:Account)-[:SENDS]->(t:Transaction)\nRETURN SUM(t.Amount) as TotalTransactionValue",
-          "width": 6,
+          "query": "MATCH (p:Person)-[:HAS_ACCOUNT]->(a:Account)-[:SENDS]->(t:Transaction)\nWITH p, COUNT(t) as TransactionCount, SUM(t.Amount) as TransactionValue\nORDER BY TransactionCount DESC\nLIMIT 1\nRETURN p.FullName as PersonWithMostTransactions, TransactionCount as TotalNumberOfTransactions, TransactionValue as TotalTransactionValue",
+          "width": 8,
           "height": 4,
           "x": 0,
           "y": 0,
-          "type": "value",
+          "type": "table",
           "selection": {},
           "settings": {},
           "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Shortest Path Between 2 Accounts",
+      "reports": [
+        {
+          "id": "c096a989-6935-43a5-8952-84000b4af56c",
+          "title": "Source Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 5",
+          "width": 9,
+          "height": 3,
+          "x": 0,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_1",
+            "id": "1"
+          },
+          "schema": []
+        },
+        {
+          "id": "041bfca1-961b-4f58-9644-4eca465774e6",
+          "title": "Target Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 5",
+          "width": 8,
+          "height": 3,
+          "x": 9,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_2",
+            "id": "2"
+          },
+          "schema": []
+        },
+        {
+          "id": "d231c6fc-e958-4131-a432-2cabbfd87e4a",
+          "title": "",
+          "query": "MATCH (start:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_1})\nMATCH (end:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_2})\nMATCH path = allShortestPaths((start)-[*..99]-(end))\nRETURN path\n\n",
+          "width": 17,
+          "height": 4,
+          "x": 0,
+          "y": 3,
+          "type": "graph",
+          "selection": {
+            "Account": "(label)",
+            "Transaction": "(label)"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "Transaction",
+              "SendingAccount",
+              "PaymentDistributionReference",
+              "ExternalReferenceNumber",
+              "Amount",
+              "ReceivingAccount",
+              "CreateDateTime",
+              "ReceiveDateTime",
+              "EffectiveDate"
+            ]
+          ]
         }
       ]
     }
@@ -303,7 +389,7 @@
       ],
       "lastMessages": {
         "1": {
-          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "What is the total value of all transactions?"
+          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "which person has the most transactions, show the total number of transactions and the total value?"
         }
       }
     }
