@@ -7,6 +7,9 @@ What is the total value of all transactions?
 which person has the most transactions, show the total number of transactions and the total value?
 
 
+what is the shortest path between account 7040610000015 and 7040610000013
+
+
 Query to create a Graph View
 
 MATCH (p:Person)-[:HAS_ACCOUNT]->(a:Account)-[:SENDS]->(t:Transaction)

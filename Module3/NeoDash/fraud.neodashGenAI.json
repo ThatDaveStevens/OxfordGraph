@@ -6,10 +6,10 @@
     "editable": true,
     "fullscreenEnabled": false,
     "parameters": {
-      "neodash_account_externalaccountnumber_1": 7040610000015,
-      "neodash_account_externalaccountnumber_1_display": 7040610000015,
-      "neodash_account_externalaccountnumber_2": 7040610000013,
-      "neodash_account_externalaccountnumber_2_display": 7040610000013
+      "neodash_account_externalaccountnumber_1": 7040610000009,
+      "neodash_account_externalaccountnumber_1_display": 7040610000009,
+      "neodash_account_externalaccountnumber_2": 7040610000003,
+      "neodash_account_externalaccountnumber_2_display": 7040610000003
     },
     "theme": "light"
   },
@@ -48,16 +48,7 @@
             "Person": "name",
             "TelephoneHome": "name",
             "TelephoneMob": "name",
-            "Case": "name",
-            "RECEIVES": "name",
-            "HAS_CASE": "name",
-            "HAS_TELEPHONE_HOME": "name",
-            "SENDS": "name",
-            "HAS_EMAIL": "name",
-            "HAS_TELEPHONE_MOBILE": "name",
-            "HAS_ACCOUNT": "name",
-            "HAS_TELEPHONE_WORK": "name",
-            "LIVES_AT": "name"
+            "Case": "name"
           },
           "settings": {
             "backgroundColor": "#FFFFFF"
@@ -213,13 +204,9 @@
           "type": "graph",
           "selection": {
             "Person": "FullName",
-            "HAS_TELEPHONE_MOBILE": "(label)",
             "TelephoneMob": "(label)",
-            "HAS_TELEPHONE_WORK": "(label)",
             "TelephoneWork": "(label)",
-            "HAS_TELEPHONE_HOME": "(label)",
             "TelephoneHome": "(label)",
-            "HAS_EMAIL": "(label)",
             "Email": "(label)"
           },
           "settings": {},
@@ -269,78 +256,46 @@
       ]
     },
     {
-      "title": "Module 3 🤫",
+      "title": "Module 3 ",
       "reports": [
         {
           "id": "97ea4cb6-36f0-481a-b089-4e7090f1debe",
           "title": "",
-          "query": "MATCH (p:Person)-[:HAS_ACCOUNT]->(a:Account)-[:SENDS]->(t:Transaction)\nWITH p, COUNT(t) as TransactionCount, SUM(t.Amount) as TransactionValue\nORDER BY TransactionCount DESC\nLIMIT 1\nRETURN p.FullName as PersonWithMostTransactions, TransactionCount as TotalNumberOfTransactions, TransactionValue as TotalTransactionValue",
-          "width": 8,
-          "height": 4,
+          "query": "MATCH (p:Person)-[:HAS_ACCOUNT]->(a:Account)-[:SENDS]->(t:Transaction)\nRETURN p.FullName, COUNT(t) AS TotalTransactions, SUM(t.Amount) AS TotalAmount\nORDER BY TotalTransactions DESC\nLIMIT 1",
+          "width": 7,
+          "height": 3,
           "x": 0,
-          "y": 0,
+          "y": 2,
           "type": "table",
           "selection": {},
           "settings": {},
           "schema": []
-        }
-      ]
-    },
-    {
-      "title": "Shortest Path Between 2 Accounts",
-      "reports": [
-        {
-          "id": "c096a989-6935-43a5-8952-84000b4af56c",
-          "title": "Source Account",
-          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 5",
-          "width": 9,
-          "height": 3,
-          "x": 0,
-          "y": 0,
-          "type": "select",
-          "selection": {},
-          "settings": {
-            "type": "Node Property",
-            "entityType": "Account",
-            "propertyType": "ExternalAccountNumber",
-            "propertyTypeDisplay": "ExternalAccountNumber",
-            "parameterName": "neodash_account_externalaccountnumber_1",
-            "id": "1"
-          },
-          "schema": []
         },
         {
-          "id": "041bfca1-961b-4f58-9644-4eca465774e6",
-          "title": "Target Account",
-          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 5",
-          "width": 8,
-          "height": 3,
-          "x": 9,
-          "y": 0,
-          "type": "select",
-          "selection": {},
-          "settings": {
-            "type": "Node Property",
-            "entityType": "Account",
-            "propertyType": "ExternalAccountNumber",
-            "propertyTypeDisplay": "ExternalAccountNumber",
-            "parameterName": "neodash_account_externalaccountnumber_2",
-            "id": "2"
-          },
-          "schema": []
-        },
-        {
-          "id": "d231c6fc-e958-4131-a432-2cabbfd87e4a",
+          "id": "8b18faf1-44fd-4dce-a63e-3c4fba5d3620",
           "title": "",
-          "query": "MATCH (start:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_1})\nMATCH (end:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_2})\nMATCH path = allShortestPaths((start)-[*..99]-(end))\nRETURN path\n\n",
-          "width": 17,
-          "height": 4,
+          "query": "MATCH (t:Transaction)\nRETURN sum(t.Amount) as TotalValueOfTransactions",
+          "width": 7,
+          "height": 2,
           "x": 0,
-          "y": 3,
+          "y": 5,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "24756e07-76f9-4217-88d4-cd33eb1e6498",
+          "title": "",
+          "query": "MATCH path=shortestPath((a1:Account {ExternalAccountNumber: 7040610000015})-[*]-(a2:Account {ExternalAccountNumber: 7040610000013}))\nRETURN path",
+          "width": 15,
+          "height": 5,
+          "x": 7,
+          "y": 2,
           "type": "graph",
           "selection": {
-            "Account": "ExternalAccountNumber",
-            "Transaction": "Amount"
+            "Account": "(label)",
+            "Transaction": "(label)"
           },
           "settings": {},
           "schema": [
@@ -364,6 +319,149 @@
               "EffectiveDate"
             ]
           ]
+        },
+        {
+          "id": "9b9364c8-089d-423b-a8e4-f6d962de85ef",
+          "title": "",
+          "query": "### All the examples within this dashboard are using OpenAI and natural language queries to retrieve the results\n\n\n",
+          "width": 24,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Shortest Path Between 2 Accounts",
+      "reports": [
+        {
+          "id": "c096a989-6935-43a5-8952-84000b4af56c",
+          "title": "Source Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 15",
+          "width": 9,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_1",
+            "id": "1",
+            "suggestionLimit": 15
+          },
+          "schema": []
+        },
+        {
+          "id": "041bfca1-961b-4f58-9644-4eca465774e6",
+          "title": "Target Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 5",
+          "width": 8,
+          "height": 2,
+          "x": 9,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_2",
+            "id": "2"
+          },
+          "schema": []
+        },
+        {
+          "id": "d231c6fc-e958-4131-a432-2cabbfd87e4a",
+          "title": "",
+          "query": "MATCH (start:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_1})\nMATCH (end:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_2})\nMATCH path = allShortestPaths((start)-[*..99]-(end))\nRETURN path\n\n",
+          "width": 17,
+          "height": 5,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Account": "ExternalAccountNumber",
+            "Transaction": "Amount",
+            "Person": "(label)",
+            "TelephoneWork": "(label)"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "Transaction",
+              "SendingAccount",
+              "PaymentDistributionReference",
+              "ExternalReferenceNumber",
+              "Amount",
+              "CreateDateTime",
+              "ReceivingAccount",
+              "EffectiveDate",
+              "ReceiveDateTime"
+            ],
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ]
+          ]
+        },
+        {
+          "id": "323eccd4-595d-41c1-b373-5b1553770ab9",
+          "title": "Account Holder ",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_1\nreturn p.FullName as Name\n",
+          "width": 9,
+          "height": 2,
+          "x": 0,
+          "y": 2,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "fontSize": 32
+          },
+          "schema": []
+        },
+        {
+          "id": "1038ab13-8138-4f57-b539-58ca6c7937fa",
+          "title": "",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_2\nreturn p.FullName as Name\n\n\n",
+          "width": 8,
+          "height": 2,
+          "x": 9,
+          "y": 2,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "fontSize": 32
+          },
+          "schema": []
         }
       ]
     }
@@ -388,7 +486,10 @@
       ],
       "lastMessages": {
         "1": {
-          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "which person has the most transactions, show the total number of transactions and the total value?"
+          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "which person has the most transactions, show the total number of transactions and the total value?",
+          "8b18faf1-44fd-4dce-a63e-3c4fba5d3620": "What is the total value of all transactions?",
+          "24756e07-76f9-4217-88d4-cd33eb1e6498": "what is the shortest path between account 7040610000015 and 7040610000013",
+          "2669b013-1c16-4a40-9142-3404b28e54d3": "what is the relastionship between account 7040610000015 and 7040610000013"
         }
       }
     }
