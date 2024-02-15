@@ -435,7 +435,7 @@
         },
         {
           "id": "323eccd4-595d-41c1-b373-5b1553770ab9",
-          "title": "Account Holder ",
+          "title": "Account Holder of Source Account",
           "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_1\nreturn p.FullName as Name\n",
           "width": 9,
           "height": 2,
@@ -450,7 +450,7 @@
         },
         {
           "id": "1038ab13-8138-4f57-b539-58ca6c7937fa",
-          "title": "",
+          "title": "Account Holder of Target Account",
           "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_2\nreturn p.FullName as Name\n\n\n",
           "width": 8,
           "height": 2,
