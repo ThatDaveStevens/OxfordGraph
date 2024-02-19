@@ -6,8 +6,15 @@ The notebook extracts content from a PDF file and creates an associated knowledg
 ## Backend example 
 Create a knowledge graph from a source PDF document
 
+![image](image/SampleArchitecture.png)
+
 [example notebook](PDF_ingestion_backend_v1.ipynb)
 
+_Generated graph model from sample PDF_
+![image](images/RAGGraph.png)
+
+_Generated KG from PDF_
+![image](images/RAGGraphContent.png)
 
 ## Frontend example
 Query the knowledge graph with a natural language query
