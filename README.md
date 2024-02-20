@@ -1,8 +1,6 @@
 # Oxford Graph
 Course Material for the Oxford GenAI course
 
-
-
 ## Module 1 : Graph Databases 101
 
 - Introduction to Graph Databases
@@ -13,8 +11,6 @@ Course Material for the Oxford GenAI course
 
 
 #### [The London Underground](Module1/LondonUnderground/readme.md)
-
-
 
 ## Module 2 : Building your first Graph Application
 
