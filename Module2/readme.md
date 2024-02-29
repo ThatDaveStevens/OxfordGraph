@@ -1,5 +1,8 @@
 # Module 2 - Building our first Graph application
 
+
+![image](FraudUseCase/images/SampleDashboard.png)
+
 ## References
 
 - [Neo4j Aura](https://neo4j.com/cloud/aura-free/)

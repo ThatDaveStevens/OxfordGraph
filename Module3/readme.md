@@ -20,3 +20,7 @@ _Generated KG from PDF_
 Query the knowledge graph with a natural language query
 
 [example notebook](PDF_ingestion_frontend_v1_1.ipynb)
+
+## Integrating OpenAI with Neodash
+
+![image](images/NeodashAI.png)

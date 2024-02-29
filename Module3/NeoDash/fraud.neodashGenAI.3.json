@@ -1,0 +1,698 @@
+{
+  "title": "Fraud Dashboard with some GenAI",
+  "version": "2.4",
+  "settings": {
+    "pagenumber": 2,
+    "editable": true,
+    "fullscreenEnabled": false,
+    "parameters": {
+      "neodash_account_externalaccountnumber_1": 7040610000001,
+      "neodash_account_externalaccountnumber_1_display": 7040610000001,
+      "neodash_account_externalaccountnumber_2": 7040610000017,
+      "neodash_account_externalaccountnumber_2_display": 7040610000017
+    },
+    "theme": "light"
+  },
+  "pages": [
+    {
+      "title": "Dataset summary",
+      "reports": [
+        {
+          "id": "e19d35a1-77e7-424f-bbeb-2477e8788ae4",
+          "title": "Total number of nodes",
+          "query": "MATCH (n)\nRETURN COUNT(n)\n\n\n",
+          "width": 7,
+          "height": 2,
+          "x": 0,
+          "y": 2,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "54a77108-cb28-4d26-967a-4f33764d982b",
+          "title": "Data Model",
+          "query": "call db.schema.visualization()\n\n\n",
+          "width": 23,
+          "height": 7,
+          "x": 0,
+          "y": 6,
+          "type": "graph",
+          "selection": {
+            "TelephoneWork": "name",
+            "Account": "name",
+            "Email": "name",
+            "Address": "name",
+            "Transaction": "name",
+            "AggregatedTransaction": "name",
+            "Person": "name",
+            "TelephoneHome": "name",
+            "TelephoneMob": "name",
+            "Case": "name",
+            "RECEIVES": "name",
+            "HAS_CASE": "name",
+            "HAS_TELEPHONE_HOME": "name",
+            "SENDS": "name",
+            "HAS_EMAIL": "name",
+            "AGGREGATED_RECEIVES": "name",
+            "HAS_TELEPHONE_MOBILE": "name",
+            "HAS_ACCOUNT": "name",
+            "HAS_TELEPHONE_WORK": "name",
+            "AGGREGATED_SENDS": "name",
+            "LIVES_AT": "name"
+          },
+          "settings": {
+            "backgroundColor": "#FFFFFF"
+          },
+          "schema": [
+            [
+              "TelephoneWork",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Account",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Email",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Address",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Transaction",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "AggregatedTransaction",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Person",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "TelephoneHome",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "TelephoneMob",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "Case",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "RECEIVES",
+              "name"
+            ],
+            [
+              "HAS_CASE",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_HOME",
+              "name"
+            ],
+            [
+              "SENDS",
+              "name"
+            ],
+            [
+              "HAS_EMAIL",
+              "name"
+            ],
+            [
+              "AGGREGATED_RECEIVES",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_MOBILE",
+              "name"
+            ],
+            [
+              "HAS_ACCOUNT",
+              "name"
+            ],
+            [
+              "HAS_TELEPHONE_WORK",
+              "name"
+            ],
+            [
+              "AGGREGATED_SENDS",
+              "name"
+            ],
+            [
+              "LIVES_AT",
+              "name"
+            ]
+          ]
+        },
+        {
+          "id": "9e293c32-40dd-4d2b-82c4-b5330777fbba",
+          "title": "Total number of relationships",
+          "query": "MATCH (n)-[e]->(m)\nRETURN COUNT(e)\n\n\n\n",
+          "width": 7,
+          "height": 2,
+          "x": 0,
+          "y": 4,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "9bf5d4a3-13ad-4a02-85d0-0afef2f46728",
+          "title": "Number of nodes labels",
+          "query": "MATCH (n)\nRETURN labels(n), count(*) as count\nORDER BY count ASC\n\n\n",
+          "width": 8,
+          "height": 4,
+          "x": 7,
+          "y": 2,
+          "type": "pie",
+          "selection": {
+            "index": "labels(n)",
+            "value": "count",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "1289e202-55ba-40f4-a3e4-5927ae006913",
+          "title": "Number of relationship types",
+          "query": "MATCH (n)-[e]->(m)\nRETURN type(e),count(*) as count\nORDER BY count ASC\n\n\n",
+          "width": 8,
+          "height": 4,
+          "x": 15,
+          "y": 2,
+          "type": "pie",
+          "selection": {
+            "index": "type(e)",
+            "value": "count",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "2b9a4b2b-88a0-4c7d-9d53-cdc1386a0ef8",
+          "title": "Introduction",
+          "query": "This dashboard presents a summary of the dataset available within sample knowledge graph, the data model is a good representation of a common fraud use case within Retail banking.\n\nAllowing us to explore both identify theft use cases and Mule accounts \n\n\n",
+          "width": 23,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "PII Dashboard",
+      "reports": [
+        {
+          "id": "150c4dfc-c9b0-487f-b4ba-562e0885f828",
+          "title": "Account holders with shared personal information",
+          "query": "MATCH (p:Person)-[r]-(id)-[r2]-(p2:Person)\nreturn p,r,id,r2,p2\n\n\n\n\n\n",
+          "width": 22,
+          "height": 7,
+          "x": 0,
+          "y": 0,
+          "type": "graph",
+          "selection": {
+            "Person": "FullName",
+            "HAS_TELEPHONE_MOBILE": "(label)",
+            "TelephoneMob": "TelephoneMob",
+            "HAS_TELEPHONE_WORK": "(label)",
+            "TelephoneWork": "TelephoneWork",
+            "LIVES_AT": "(label)",
+            "Address": "PostCode",
+            "HAS_TELEPHONE_HOME": "(label)",
+            "TelephoneHome": "TelephoneHome",
+            "HAS_EMAIL": "(label)",
+            "Email": "Email"
+          },
+          "settings": {
+            "fullscreenEnabled": true,
+            "downloadImageEnabled": true,
+            "frozen": true
+          },
+          "schema": [
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality",
+              "ExtractDate"
+            ],
+            [
+              "HAS_TELEPHONE_MOBILE"
+            ],
+            [
+              "TelephoneMob",
+              "TelephoneMob"
+            ],
+            [
+              "HAS_TELEPHONE_WORK"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ],
+            [
+              "LIVES_AT"
+            ],
+            [
+              "Address",
+              "PostCodeOut",
+              "CustomerNumber",
+              "ExtractDate",
+              "Address2",
+              "Address3",
+              "Address1",
+              "PostCodeIn",
+              "PostCode",
+              "CountryCode"
+            ],
+            [
+              "HAS_TELEPHONE_HOME"
+            ],
+            [
+              "TelephoneHome",
+              "TelephoneHome"
+            ],
+            [
+              "HAS_EMAIL"
+            ],
+            [
+              "Email",
+              "Email"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Investigate 2 accounts",
+      "reports": [
+        {
+          "id": "c096a989-6935-43a5-8952-84000b4af56c",
+          "title": "Source Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 15",
+          "width": 9,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_1",
+            "id": "1",
+            "suggestionLimit": 15
+          },
+          "schema": []
+        },
+        {
+          "id": "041bfca1-961b-4f58-9644-4eca465774e6",
+          "title": "Target Account",
+          "query": "MATCH (n:`Account`) \nWHERE toLower(toString(n.`ExternalAccountNumber`)) CONTAINS toLower($input) \nRETURN DISTINCT n.`ExternalAccountNumber` as value,  n.`ExternalAccountNumber` as display ORDER BY size(toString(value)) ASC LIMIT 50",
+          "width": 8,
+          "height": 2,
+          "x": 9,
+          "y": 0,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Node Property",
+            "entityType": "Account",
+            "propertyType": "ExternalAccountNumber",
+            "propertyTypeDisplay": "ExternalAccountNumber",
+            "parameterName": "neodash_account_externalaccountnumber_2",
+            "id": "2",
+            "suggestionLimit": 50
+          },
+          "schema": []
+        },
+        {
+          "id": "d231c6fc-e958-4131-a432-2cabbfd87e4a",
+          "title": "Shortest Path between the 2 accounts",
+          "query": "MATCH (start:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_1})\nMATCH (end:Account {ExternalAccountNumber: $neodash_account_externalaccountnumber_2})\nMATCH path = allShortestPaths((start)-[*..50]-(end))\nRETURN path\n\n",
+          "width": 10,
+          "height": 8,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Account": "ExternalAccountNumber",
+            "Transaction": "(label)",
+            "Person": "(label)",
+            "TelephoneWork": "(label)",
+            "TelephoneMob": "(label)",
+            "TelephoneHome": "(label)",
+            "AggregatedTransaction": "(label)",
+            "Email": "(label)",
+            "Address": "(label)"
+          },
+          "settings": {
+            "nodeColorScheme": "nivo",
+            "fullscreenEnabled": true,
+            "downloadImageEnabled": true
+          },
+          "schema": [
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "Transaction",
+              "SendingAccount",
+              "PaymentDistributionReference",
+              "ExternalReferenceNumber",
+              "Amount",
+              "CreateDateTime",
+              "ReceivingAccount",
+              "ReceiveDateTime",
+              "EffectiveDate"
+            ],
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ],
+            [
+              "TelephoneMob",
+              "TelephoneMob"
+            ],
+            [
+              "TelephoneHome",
+              "TelephoneHome"
+            ],
+            [
+              "AggregatedTransaction",
+              "minAmount",
+              "RecentAmount",
+              "ReceivingAccount",
+              "maxAmount"
+            ],
+            [
+              "Email",
+              "Email"
+            ],
+            [
+              "Address",
+              "PostCodeOut",
+              "CustomerNumber",
+              "ExtractDate",
+              "Address2",
+              "Address3",
+              "Address1",
+              "PostCodeIn",
+              "PostCode",
+              "CountryCode"
+            ]
+          ]
+        },
+        {
+          "id": "323eccd4-595d-41c1-b373-5b1553770ab9",
+          "title": "Account Holder of Source Account",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_1\nreturn p.FullName as Name\n",
+          "width": 9,
+          "height": 2,
+          "x": 0,
+          "y": 2,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "fontSize": 32
+          },
+          "schema": []
+        },
+        {
+          "id": "1038ab13-8138-4f57-b539-58ca6c7937fa",
+          "title": "Account Holder of Target Account",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_2\nreturn p.FullName as Name\n\n\n",
+          "width": 8,
+          "height": 2,
+          "x": 9,
+          "y": 2,
+          "type": "value",
+          "selection": {},
+          "settings": {
+            "fontSize": 32
+          },
+          "schema": []
+        },
+        {
+          "id": "64a6904c-c060-4fec-8b54-ee21c849f201",
+          "title": "Count of Transactions per month for account $neodash_account_externalaccountnumber_1",
+          "query": "MATCH (a:Account)--(t:Transaction)\nwhere t.CreateDateTime IS NOT NULL AND a.ExternalAccountNumber=$neodash_account_externalaccountnumber_1\nWITH t, date(t.CreateDateTime).month as Month\nRETURN Month, COUNT(t) as Total\nORDER BY Month ASC",
+          "width": 7,
+          "height": 4,
+          "x": 10,
+          "y": 8,
+          "type": "bar",
+          "selection": {
+            "index": "Month",
+            "value": "Total",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "bb97c4f7-c499-4c60-86f0-71ffd73c51ba",
+          "title": "Count of Transactions per month for account $neodash_account_externalaccountnumber_2",
+          "query": "MATCH (a:Account)--(t:Transaction)\nwhere t.CreateDateTime IS NOT NULL AND a.ExternalAccountNumber=$neodash_account_externalaccountnumber_2\nWITH t, date(t.CreateDateTime).month as Month\nRETURN Month, COUNT(t) as Total\nORDER BY Month ASC\n\n\n",
+          "width": 7,
+          "height": 4,
+          "x": 10,
+          "y": 4,
+          "type": "bar",
+          "selection": {
+            "index": "Month",
+            "value": "Total",
+            "key": "(none)"
+          },
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "56ed52f0-f97e-4925-9710-32250d84d5db",
+          "title": "Account Holder of Source Account",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_1\nreturn \np.FullName as Name,\np.CustomerNumber as CustomerNumber,\np.DOB as DateOfBirth,\np.Gender as Gender,\np.Nationality as Nationality\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 17,
+          "y": 0,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "transposed": true
+          },
+          "schema": []
+        },
+        {
+          "id": "23eb1838-f2c1-4bd2-835b-7889235b8da4",
+          "title": "Account Holder of Source Account",
+          "query": "match (a:Account)<-[HOLDS_ACCOUNT]-(p:Person)\nwhere a.ExternalAccountNumber=$neodash_account_externalaccountnumber_2\nreturn \np.FullName as Name,\np.CustomerNumber as CustomerNumber,\np.DOB as DateOfBirth,\np.Gender as Gender,\np.Nationality as Nationality\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 17,
+          "y": 4,
+          "type": "table",
+          "selection": {},
+          "settings": {
+            "transposed": true
+          },
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "OpenAI Dashboard 🤖",
+      "reports": [
+        {
+          "id": "97ea4cb6-36f0-481a-b089-4e7090f1debe",
+          "title": "\"Person with the most transactions?\"",
+          "query": "MATCH (p:Person)-[:HAS_ACCOUNT]->(a:Account)-[:SENDS]->(t:Transaction)\nRETURN p.FullName, COUNT(t) AS TotalTransactions, SUM(t.Amount) AS TotalAmount\nORDER BY TotalAmount DESC \nLIMIT 1",
+          "width": 7,
+          "height": 3,
+          "x": 0,
+          "y": 2,
+          "type": "table",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "8b18faf1-44fd-4dce-a63e-3c4fba5d3620",
+          "title": "\"Sum of all Transactions?\"",
+          "query": "MATCH (t:Transaction)\nRETURN sum(t.Amount) as TotalValueOfTransactions",
+          "width": 7,
+          "height": 2,
+          "x": 0,
+          "y": 5,
+          "type": "value",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "24756e07-76f9-4217-88d4-cd33eb1e6498",
+          "title": "\"Shortest Path between 2 accounts?\"",
+          "query": "MATCH path = shortestPath((acc1:Account{ExternalAccountNumber: 7040610000009})-[*]-(acc2:Account{ExternalAccountNumber: 7040610000003})) RETURN path",
+          "width": 17,
+          "height": 5,
+          "x": 7,
+          "y": 2,
+          "type": "graph",
+          "selection": {
+            "Account": "ExternalAccountNumber",
+            "AggregatedTransaction": "RecentAmount",
+            "Transaction": "ExternalReferenceNumber",
+            "Person": "FullName",
+            "TelephoneWork": "TelephoneWork"
+          },
+          "settings": {},
+          "schema": [
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "AggregatedTransaction",
+              "minAmount",
+              "RecentAmount",
+              "ReceivingAccount",
+              "maxAmount"
+            ],
+            [
+              "Transaction",
+              "SendingAccount",
+              "PaymentDistributionReference",
+              "ExternalReferenceNumber",
+              "Amount",
+              "CreateDateTime",
+              "ReceivingAccount",
+              "ReceiveDateTime",
+              "EffectiveDate"
+            ],
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ]
+          ]
+        },
+        {
+          "id": "9b9364c8-089d-423b-a8e4-f6d962de85ef",
+          "title": "",
+          "query": "#### All the examples within this dashboard are using OpenAI and natural language queries to retrieve the results\n\n\n",
+          "width": 24,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        }
+      ]
+    }
+  ],
+  "parameters": {},
+  "extensions": {
+    "active": true,
+    "activeReducers": [
+      "DASHBOARD/EXTENSIONS/QUERY_TRANSLATOR/"
+    ],
+    "query-translator": {
+      "active": true,
+      "modelProvider": "OpenAI",
+      "settings": {
+        "modelType": "gpt-4"
+      },
+      "examples": [
+        {
+          "question": "People with accounts",
+          "answer": "match (p:Person)-[:HOLDS]->(a:Account) return p.Fullname"
+        }
+      ],
+      "lastMessages": {
+        "1": {
+          "97ea4cb6-36f0-481a-b089-4e7090f1debe": "which person has the highest transactions, show the total number of transactions and the total value?",
+          "8b18faf1-44fd-4dce-a63e-3c4fba5d3620": "What is the total value of all transactions?",
+          "24756e07-76f9-4217-88d4-cd33eb1e6498": "what is the shortest path between account 7040610000003 and 7040610000014",
+          "2669b013-1c16-4a40-9142-3404b28e54d3": "what is the relastionship between account 7040610000015 and 7040610000013"
+        }
+      }
+    }
+  },
+  "uuid": "472d1a7b-5500-4d0b-ba88-771ca3d844da"
+}
