@@ -48,7 +48,7 @@ Here's a breakdown of what this query does:
 `size(apoc.coll.toSet(stations)) AS numberOfStations` This converts the list of stations to a set to ensure uniqueness and then calculates the size of the set to get the number of unique stations per line.
 RETURN line, size(apoc.coll.toSet(stations)) AS numberOfStations: This returns the line and the number of unique stations.
 
-`ORDER BY numberOfStations` This orders the results by line.
+`ORDER BY numberOfStations` This orders the results by the number of stations.
 
 
 line|numberOfStations|
