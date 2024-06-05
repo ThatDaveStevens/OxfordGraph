@@ -1,3 +1,4 @@
+~~~
 //SETUP THE DATABASE
 CREATE CONSTRAINT station_name FOR (station:Station) REQUIRE station.name IS UNIQUE;
 CREATE CONSTRAINT line_name FOR (line:Line) REQUIRE line.name IS UNIQUE;
@@ -44,3 +45,4 @@ MATCH p=()-[r:ON]->() delete r;
 MATCH p=()-[r:IN_ZONE]->() delete r;
 MATCH (n:Zone) detach delete n;
 MATCH (n:Line) detach delete n;
+~~~
