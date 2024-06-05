@@ -16,23 +16,23 @@ CREATE (:Zone {id: toInteger('8')});
 CREATE (:Zone {id: toInteger('9')});
 
 // LOAD STATIONS IN ZONE 1
-LOAD CSV WITH HEADERS FROM "file:///Stations.csv" AS LINE FIELDTERMINATOR ',' 
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/ThatDaveStevens/OxfordGraph/main/Module1/LondonUnderground/importFiles/stations.csv" AS LINE FIELDTERMINATOR ',' 
 WITH LINE WHERE toFloat(LINE.zone) = toInteger(LINE.zone)
 MATCH (z:Zone {id: toInteger(LINE.zone)})
 MERGE (station:Station {id: toInteger(LINE.id), longitude: toFloat(LINE.longitude), latitude: toFloat(LINE.latitude), name: LINE.name, zone: toInteger(LINE.zone), total_lines: toInteger(LINE.total_lines), rail: toInteger(LINE.rail)})-[:IN_ZONE]->(z);
 
 //LOAD ALL STATIONS
-LOAD CSV WITH HEADERS FROM "file:///Stations.csv" AS LINE FIELDTERMINATOR ',' 
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/ThatDaveStevens/OxfordGraph/main/Module1/LondonUnderground/importFiles/stations.csv" AS LINE FIELDTERMINATOR ',' 
 WITH LINE, toInteger(LINE.zone) as firstZone, toInteger(LINE.zone) + 1 as secondZone WHERE toFloat(LINE.zone) <> toInteger(LINE.zone)
 MATCH (z1:Zone {id: firstZone}), (z2:Zone {id: secondZone})
 MERGE (z1)<-[:IN_ZONE]-(station:Station {id: toInteger(LINE.id), longitude: toFloat(LINE.longitude), latitude: toFloat(LINE.latitude), name: LINE.name, zone: toInteger(LINE.zone), total_lines: toInteger(LINE.total_lines), rail: toInteger(LINE.rail)})-[:IN_ZONE]->(z2);
 
 //LOAD ALL LINES
-LOAD CSV WITH HEADERS FROM "file:///Lines.csv" AS LINE FIELDTERMINATOR ',' WITH LINE
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/ThatDaveStevens/OxfordGraph/main/Module1/LondonUnderground/importFiles/lines.csv" AS LINE FIELDTERMINATOR ',' WITH LINE
 MERGE (:Line {id: toInteger(LINE.id), name: LINE.name, colour: LINE.colour, rel_name: LINE.rel_name});
 
 //CONNECT STATIONS TO LINES
-LOAD CSV WITH HEADERS FROM "file:///Line_Stations.csv" AS LINE FIELDTERMINATOR ',' WITH LINE
+LOAD CSV WITH HEADERS FROM "https://raw.githubusercontent.com/ThatDaveStevens/OxfordGraph/main/Module1/LondonUnderground/importFiles/line_stations.csv" AS LINE FIELDTERMINATOR ',' WITH LINE
 MATCH (s1:Station {id: toInteger(LINE.station1)}), (s2:Station {id: toInteger(LINE.station2)}), (line:Line {id: toInteger(LINE.line)})
 MERGE (s1)-[:ON]->(line)
 MERGE (s2)-[:ON]->(line)
@@ -46,3 +46,10 @@ MATCH p=()-[r:IN_ZONE]->() delete r;
 MATCH (n:Zone) detach delete n;
 MATCH (n:Line) detach delete n;
 ~~~
+
+~~~
+MATCH (s:Station)-[r]-(:Station) RETURN s,r
+~~~
+
+![image](images/ImportResults.png)<br>
+_Results from our data import_
