@@ -1,0 +1,341 @@
+{
+  "version": "1.4.0",
+  "graph": {
+    "nodes": [
+      {
+        "id": "n0",
+        "position": {
+          "x": 0,
+          "y": 0
+        },
+        "caption": "Station"
+      }
+    ],
+    "relationships": [
+      {
+        "id": "n0",
+        "type": "CONNECTS",
+        "fromId": "n0",
+        "toId": "n0"
+      }
+    ]
+  },
+  "dataModel": {
+    "version": "1.4.0",
+    "graphSchemaRepresentation": {
+      "version": "1.0.0",
+      "graphSchema": {
+        "nodeLabels": [
+          {
+            "$id": "nl:n0",
+            "token": "Station",
+            "properties": [
+              {
+                "$id": "p:1",
+                "token": "Station",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:2",
+                "token": "OS X",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:3",
+                "token": "OS Y",
+                "type": {
+                  "type": "integer"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:4",
+                "token": "Latitude",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:5",
+                "token": "Longitude",
+                "type": {
+                  "type": "float"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:6",
+                "token": "Zone",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              {
+                "$id": "p:7",
+                "token": "Postcode",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "relationshipTypes": [
+          {
+            "$id": "rt:n0",
+            "token": "CONNECTS",
+            "properties": [
+              {
+                "$id": "p:8",
+                "token": "TubeLine",
+                "type": {
+                  "type": "string"
+                },
+                "nullable": true
+              }
+            ]
+          }
+        ],
+        "nodeObjectTypes": [
+          {
+            "$id": "n:n0",
+            "labels": [
+              {
+                "$ref": "#nl:n0"
+              }
+            ]
+          }
+        ],
+        "relationshipObjectTypes": [
+          {
+            "$id": "r:n0",
+            "type": {
+              "$ref": "#rt:n0"
+            },
+            "from": {
+              "$ref": "#n:n0"
+            },
+            "to": {
+              "$ref": "#n:n0"
+            }
+          }
+        ],
+        "constraints": [
+          {
+            "$id": "c:1",
+            "name": "Station_Station_uniq",
+            "constraintType": "uniqueness",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          }
+        ],
+        "indexes": [
+          {
+            "$id": "i:1",
+            "name": "Station_Station_uniq",
+            "indexType": "default",
+            "entityType": "node",
+            "nodeLabel": {
+              "$ref": "#nl:n0"
+            },
+            "properties": [
+              {
+                "$ref": "#p:1"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "graphSchemaExtensionsRepresentation": {
+      "nodeKeyProperties": [
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "keyProperty": {
+            "$ref": "#p:1"
+          }
+        }
+      ]
+    },
+    "graphMappingRepresentation": {
+      "dataSourceSchema": {
+        "type": "local/csv",
+        "tableSchemas": [
+          {
+            "$id": "t:1",
+            "name": "London stations.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "Station",
+                "type": "string",
+                "sample": "Abbey Road",
+                "include": true
+              },
+              {
+                "name": "OS X",
+                "type": "integer",
+                "sample": "539081",
+                "include": true
+              },
+              {
+                "name": "OS Y",
+                "type": "integer",
+                "sample": "183352",
+                "include": true
+              },
+              {
+                "name": "Latitude",
+                "type": "float",
+                "sample": "51.53195199547294",
+                "include": true
+              },
+              {
+                "name": "Longitude",
+                "type": "float",
+                "sample": "0.0037233710983363487",
+                "include": true
+              },
+              {
+                "name": "Zone",
+                "type": "string",
+                "sample": "3",
+                "include": true
+              },
+              {
+                "name": "Postcode",
+                "type": "string",
+                "sample": "E15 3NB",
+                "include": true
+              }
+            ]
+          },
+          {
+            "$id": "t:2",
+            "name": "London tube lines.csv",
+            "expanded": true,
+            "fields": [
+              {
+                "name": "Tube Line",
+                "type": "string",
+                "sample": "Bakerloo",
+                "include": true
+              },
+              {
+                "name": "From Station",
+                "type": "string",
+                "sample": "Baker Street",
+                "include": true
+              },
+              {
+                "name": "To Station",
+                "type": "string",
+                "sample": "Regents Park",
+                "include": true
+              }
+            ]
+          }
+        ]
+      },
+      "nodeMappings": [
+        {
+          "node": {
+            "$ref": "#n:n0"
+          },
+          "tableSchema": {
+            "$ref": "#t:1"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "Station",
+              "property": {
+                "$ref": "#p:1"
+              }
+            },
+            {
+              "fieldName": "OS X",
+              "property": {
+                "$ref": "#p:2"
+              }
+            },
+            {
+              "fieldName": "OS Y",
+              "property": {
+                "$ref": "#p:3"
+              }
+            },
+            {
+              "fieldName": "Latitude",
+              "property": {
+                "$ref": "#p:4"
+              }
+            },
+            {
+              "fieldName": "Longitude",
+              "property": {
+                "$ref": "#p:5"
+              }
+            },
+            {
+              "fieldName": "Zone",
+              "property": {
+                "$ref": "#p:6"
+              }
+            },
+            {
+              "fieldName": "Postcode",
+              "property": {
+                "$ref": "#p:7"
+              }
+            }
+          ]
+        }
+      ],
+      "relationshipMappings": [
+        {
+          "relationship": {
+            "$ref": "#r:n0"
+          },
+          "tableSchema": {
+            "$ref": "#t:2"
+          },
+          "propertyMappings": [
+            {
+              "fieldName": "Tube Line",
+              "property": {
+                "$ref": "#p:8"
+              }
+            }
+          ],
+          "fromMapping": {
+            "fieldName": "From Station"
+          },
+          "toMapping": {
+            "fieldName": "To Station"
+          }
+        }
+      ]
+    },
+    "configurations": {
+      "idsToIgnore": []
+    }
+  }
+}
