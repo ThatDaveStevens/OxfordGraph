@@ -23,8 +23,8 @@ DELETE r
 Example query
 
 ~~~
-MATCH (start:Station {Station: "Paddington"})
-MATCH (end:Station {Station: "Southwark"})
+MATCH (start:Station {Name: "Paddington"})
+MATCH (end:Station {Name: "Southwark"})
 MATCH path = allShortestPaths((start)-[*..99]-(end))
 RETURN path
 ~~~
