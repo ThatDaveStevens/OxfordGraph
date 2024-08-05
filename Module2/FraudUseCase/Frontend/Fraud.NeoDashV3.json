@@ -16,7 +16,7 @@
       "neodash_transaction_min_amount": "5000",
       "neodash_transaction_amount": "",
       "neodash_transaction_amount_display": "",
-      "neodash_minimum_transaction_amount": "5000",
+      "neodash_minimum_transaction_amount": "6000",
       "neodash_account_number": "7040610000090",
       "neodash_start_date": {
         "year": 2024,
@@ -30,14 +30,15 @@
       },
       "neodash_mindate": {
         "year": 2024,
-        "month": 4,
-        "day": 4
+        "month": 3,
+        "day": 1
       },
       "neodash_maxdate": {
         "year": 2024,
-        "month": 7,
+        "month": 6,
         "day": 30
-      }
+      },
+      "neodash_account_numbers": "7040610000005,7040610000006,7040610000007,7040610000008,7040610000009,7040610000007"
     },
     "theme": "light"
   },
@@ -69,11 +70,11 @@
           "type": "graph",
           "selection": {
             "TelephoneWork": "name",
+            "_Neodash_Dashboard": "name",
             "Account": "name",
             "Email": "name",
             "Address": "name",
             "Transaction": "name",
-            "AggregatedTransaction": "name",
             "Person": "name",
             "TelephoneHome": "name",
             "TelephoneMob": "name",
@@ -83,12 +84,11 @@
             "HAS_TELEPHONE_HOME": "name",
             "SENDS": "name",
             "HAS_EMAIL": "name",
-            "AGGREGATED_RECEIVES": "name",
             "HAS_TELEPHONE_MOBILE": "name",
-            "HAS_ACCOUNT": "name",
+            "USES_EMAIL": "name",
             "HAS_TELEPHONE_WORK": "name",
-            "AGGREGATED_SENDS": "name",
-            "LIVES_AT": "name"
+            "LIVES_AT": "name",
+            "HOLDS": "name"
           },
           "settings": {
             "backgroundColor": "#FFFFFF"
@@ -96,6 +96,12 @@
           "schema": [
             [
               "TelephoneWork",
+              "name",
+              "indexes",
+              "constraints"
+            ],
+            [
+              "_Neodash_Dashboard",
               "name",
               "indexes",
               "constraints"
@@ -120,12 +126,6 @@
             ],
             [
               "Transaction",
-              "name",
-              "indexes",
-              "constraints"
-            ],
-            [
-              "AggregatedTransaction",
               "name",
               "indexes",
               "constraints"
@@ -175,15 +175,11 @@
               "name"
             ],
             [
-              "AGGREGATED_RECEIVES",
-              "name"
-            ],
-            [
               "HAS_TELEPHONE_MOBILE",
               "name"
             ],
             [
-              "HAS_ACCOUNT",
+              "USES_EMAIL",
               "name"
             ],
             [
@@ -191,11 +187,11 @@
               "name"
             ],
             [
-              "AGGREGATED_SENDS",
+              "LIVES_AT",
               "name"
             ],
             [
-              "LIVES_AT",
+              "HOLDS",
               "name"
             ]
           ]
@@ -710,7 +706,7 @@
           "width": 6,
           "height": 2,
           "x": 0,
-          "y": 0,
+          "y": 2,
           "type": "select",
           "selection": {},
           "settings": {
@@ -723,11 +719,11 @@
         {
           "id": "f09e18e8-4e7c-415d-8a76-03531bbf9b87",
           "title": "Account Holder Details",
-          "query": "match (p:Person)-[:HOLDS]->(a:Account) \nwhere a.ExternalAccountNumber = toInteger($neodash_account_number)\nreturn a.ExternalAccountNumber AS AccountNumber,\n toString(p.CustomerNumber) as CustomerNumber,\n p.FullName as AccountHolder,\n p.NBSRelationshipStartDate as AccountCreationDate\n\n\n",
+          "query": "match (p:Person)-[:HOLDS]->(a:Account) \nwhere a.ExternalAccountNumber = toInteger($neodash_account_number)\nreturn a.ExternalAccountNumber AS AccountNumber,\n toString(p.CustomerNumber) as CustomerNumber,\n p.FullName as AccountHolder,\n p.NBSRelationshipStartDate as AccountCreationDate",
           "width": 7,
           "height": 4,
           "x": 0,
-          "y": 2,
+          "y": 4,
           "type": "table",
           "selection": {},
           "settings": {
@@ -742,7 +738,7 @@
           "width": 6,
           "height": 2,
           "x": 6,
-          "y": 0,
+          "y": 2,
           "type": "select",
           "selection": {},
           "settings": {
@@ -755,16 +751,17 @@
         {
           "id": "f5146f4c-17ef-4f4c-8690-4c97cd0553e4",
           "title": "Transaction Details",
-          "query": "MATCH (p1:Person)-[h1:HOLDS]->(a1:Account)-[s:SENDS]->(t:Transaction)-[r:RECEIVES]->(a2:Account)<-[:HOLDS]-(p2:Person)\nWHERE a1.ExternalAccountNumber = toInteger($neodash_account_number)\nAND t.Amount > toInteger($neodash_minimum_transaction_amount)\nAND t.CreateDateTime >= datetime($neodash_mindate)\nAND t.CreateDateTime <= datetime($neodash_maxdate)\nRETURN a1.ExternalAccountNumber As SendingAccount, p1.FullName As Sender, \nt.CreateDateTime as TransactionDate, \nt.Amount AS Amount, p2.FullName as Receiver, a2.ExternalAccountNumber as ReceivingAccount",
+          "query": "MATCH (p1:Person)-[h1:HOLDS]->(a1:Account)-[s:SENDS]->(t:Transaction)-[r:RECEIVES]->(a2:Account)<-[:HOLDS]-(p2:Person)\nWHERE a1.ExternalAccountNumber = toInteger($neodash_account_number)\nAND t.Amount >= toInteger($neodash_minimum_transaction_amount)\nAND t.CreateDateTime >= datetime({year:$neodash_mindate.year, month:$neodash_mindate.month, day:$neodash_mindate.day})\nAND t.CreateDateTime <= datetime({year:$neodash_maxdate.year, month:$neodash_maxdate.month, day:$neodash_maxdate.day})\nRETURN toString(a1.ExternalAccountNumber) As SendingAccount, \np1.FullName As Sender, \ndate(t.CreateDateTime) as TransactionDate,\nt.Amount AS Amount, \np2.FullName as Receiver, \ntoString(a2.ExternalAccountNumber) as ReceivingAccount\nORDER BY Amount ASC",
           "width": 17,
           "height": 4,
           "x": 7,
-          "y": 2,
+          "y": 4,
           "type": "table",
           "selection": {},
           "settings": {
             "compact": true,
-            "allowDownload": true
+            "allowDownload": true,
+            "fullscreenEnabled": true
           }
         },
         {
@@ -774,7 +771,7 @@
           "width": 6,
           "height": 2,
           "x": 12,
-          "y": 0,
+          "y": 2,
           "type": "select",
           "selection": {},
           "settings": {
@@ -791,7 +788,7 @@
           "width": 6,
           "height": 2,
           "x": 18,
-          "y": 0,
+          "y": 2,
           "type": "select",
           "selection": {},
           "settings": {
@@ -800,6 +797,199 @@
             "parameterName": "neodash_maxdate"
           },
           "schema": []
+        },
+        {
+          "id": "95f3b8a1-268f-4b2c-97b0-b81a03c82749",
+          "title": "Return account and transaction information based on the following input values",
+          "query": "### \n\n- Account Number\n- Minimum transactions value\n- Start Date\n- End Date\n\n",
+          "width": 24,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        }
+      ]
+    },
+    {
+      "title": "Investigate a group of accounts",
+      "reports": [
+        {
+          "id": "f71844e5-bfdf-4c3a-b1ed-8a1d5e45ab38",
+          "title": "Return any connections between a list of accounts, could be personal information or transactioning with a common individual.",
+          "query": "\n- Input is a comma seperated list of accounts\n- Output is 2 graph views\n   - Shared Personal Information\n   - Shared transaction Information\n\n\n\n",
+          "width": 24,
+          "height": 2,
+          "x": 0,
+          "y": 0,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "dc2b5ec4-34fa-4702-ae50-ff0dbd8e7353",
+          "title": "Enter a list of account numbers, separate each with a comma ",
+          "query": "RETURN true;",
+          "width": 24,
+          "height": 2,
+          "x": 0,
+          "y": 2,
+          "type": "select",
+          "selection": {},
+          "settings": {
+            "type": "Free Text",
+            "entityType": "Account Numbers",
+            "parameterName": "neodash_account_numbers"
+          },
+          "schema": []
+        },
+        {
+          "id": "235c90e3-43e1-4c0e-8fe5-f6a84295e4be",
+          "title": "Common Transactions within the group",
+          "query": "WITH [7040610000005,7040610000006,7040610000007,7040610000008,7040610000009,7040610000010] AS accountList\nMATCH path=(p1:Person)-[:HOLDS]->(a1:Account)-[:SENDS|RECEIVES]-(t:Transaction)-[:SENDS|RECEIVES]-(a2:Account)<-[:HOLDS]-(p2:Person)\nWHERE a1.ExternalAccountNumber IN accountList\nRETURN path",
+          "width": 9,
+          "height": 4,
+          "x": 0,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Person": "(label)",
+            "Account": "ExternalAccountNumber",
+            "Transaction": "(label)"
+          },
+          "settings": {
+            "fullscreenEnabled": true
+          },
+          "schema": [
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "Transaction",
+              "SendingAccount",
+              "PaymentDistributionReference",
+              "ExternalReferenceNumber",
+              "Amount",
+              "ReceivingAccount",
+              "CreateDateTime",
+              "ReceiveDateTime",
+              "EffectiveDate"
+            ]
+          ]
+        },
+        {
+          "id": "62ab0541-4fc7-4726-b1b0-eebd7a09e2e2",
+          "title": "",
+          "query": "$neodash_account_numbers\n\n\n",
+          "width": 6,
+          "height": 4,
+          "x": 9,
+          "y": 16,
+          "type": "text",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "550f0b47-e83e-4f18-b226-2fdb24f20be3",
+          "title": "",
+          "query": "WITH $neodash_account_numbers AS accountListString\nWITH split (accountListString, ',') as accountList\n\nMATCH path=(p1:Person)-[:HOLDS]->(a1:Account)-[:SENDS|RECEIVES]-(t:Transaction)-[:SENDS|RECEIVES]-(a2:Account)<-[:HOLDS]-(p2:Person)\nWHERE a1.ExternalAccountNumber IN accountList\nRETURN path\n\n\n",
+          "width": 16,
+          "height": 4,
+          "x": 0,
+          "y": 12,
+          "type": "graph",
+          "selection": {},
+          "settings": {},
+          "schema": []
+        },
+        {
+          "id": "91e4ced2-eb1e-4691-9b5b-d07d819eca42",
+          "title": "Shared personal information within the group",
+          "query": "WITH [7040610000005,7040610000006,7040610000007,7040610000008,7040610000009,7040610000010] AS accountList\nMATCH path=(a1:Account)<-[:HOLDS]-(p1:Person)-[l1]-(id)-[l2]-(p2:Person)-[:HOLDS]-(a:Account)\nWHERE a1.ExternalAccountNumber IN accountList\nRETURN path\n\n\n",
+          "width": 10,
+          "height": 4,
+          "x": 9,
+          "y": 4,
+          "type": "graph",
+          "selection": {
+            "Account": "ExternalAccountNumber",
+            "Person": "(label)",
+            "TelephoneWork": "(label)",
+            "Email": "(label)",
+            "Address": "(label)",
+            "TelephoneMob": "(label)"
+          },
+          "settings": {
+            "fullscreenEnabled": true,
+            "downloadImageEnabled": true
+          },
+          "schema": [
+            [
+              "Account",
+              "ExternalAccountNumber",
+              "InternalAccountNumber",
+              "AgreementOpenDate",
+              "CustomerNumber",
+              "AccountSubType"
+            ],
+            [
+              "Person",
+              "NINumber",
+              "CustomerNumber",
+              "MaritalStatusFlag",
+              "DOB",
+              "FullName",
+              "ExtractDate",
+              "NBSRelationshipStartDate",
+              "Gender",
+              "Nationality"
+            ],
+            [
+              "TelephoneWork",
+              "TelephoneWork"
+            ],
+            [
+              "Email",
+              "Email"
+            ],
+            [
+              "Address",
+              "PostCodeOut",
+              "CustomerNumber",
+              "ExtractDate",
+              "Address2",
+              "Address3",
+              "Address1",
+              "PostCodeIn",
+              "PostCode",
+              "CountryCode"
+            ],
+            [
+              "TelephoneMob",
+              "TelephoneMob"
+            ]
+          ]
         }
       ]
     }
